@@ -1,0 +1,40 @@
+@use '../../../../../scss/utils' as *;
+@use '../../../../../scss/base' as *;
+
+.first-col-about {
+    .main-title {
+        font-size: clamp(size('titles-size'), 4vw, size('gaint-size') + 0.5rem);
+        font-weight: weight('w-500');
+        line-height: 1.5;
+        margin-block: clamp(3rem, 14vw, 8rem) clamp(3rem, 14vw, 6rem);
+    }
+
+    .shape-ball-and-line {
+        display: grid;
+        height: 20vh;
+
+        .linee {
+            width: 100%;
+            height: 2px;
+            background-color: $clr-black;
+        }
+
+        .about-globe {
+            position: relative;
+            justify-self: end;
+            width: fit-content;
+            padding: clamp(1rem, 4vw, 3rem);
+            margin-right: 1rem;
+            border-radius: 50%;
+            transform: translateY(-50%);
+            background-color: $clr-orange;
+            transition: 0.8s linear;
+            cursor: pointer;
+
+            &:hover {
+                animation: about-globe-backgournd-color-animation 5s infinite
+                    linear 0.5s;
+            }
+        }
+    }
+}

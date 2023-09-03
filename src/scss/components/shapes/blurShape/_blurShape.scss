@@ -1,0 +1,19 @@
+@use '../../../base' as *;
+@use '../../../utils' as *;
+
+.blur-shape {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+    z-index: 2;
+    opacity: 0;
+    transition: 0.5s ease-out;
+    pointer-events: none;
+
+    &.active-blur-shape {
+        opacity: 1;
+        pointer-events: all;
+    }
+}

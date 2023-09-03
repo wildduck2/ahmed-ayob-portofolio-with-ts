@@ -1,0 +1,51 @@
+@use '../../../../../scss/utils' as *;
+@use '../../../../../scss/base' as *;
+
+.third-col-contact {
+    @include grid-place-center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    order: -1;
+
+    @include mq(mq4) {
+        order: 1;
+        align-self: flex-start;
+    }
+
+    img {
+        width: 110px;
+    }
+
+    .flex-footer {
+        margin-top: 3rem;
+        div {
+            @include grid-a-center;
+            gap: 1rem;
+            color: $clr-white;
+            margin-bottom: clamp(3rem, 1vw, 4rem);
+
+            h3 {
+                font-weight: weight('w-500');
+                font-size: size('medium-size');
+                color: $clr-gray;
+                // margin-bottom: 1rem;
+                text-transform: uppercase;
+            }
+            .time-data {
+                color: $clr-white;
+                margin-bottom: 0.5rem;
+                cursor: pointer;
+            }
+
+            .menu-social {
+                display: flex;
+                svg {
+                    width: size('gaint-size') - 0.5rem;
+                    height: size('gaint-size') - 0.5rem;
+                    fill: $clr-white;
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,155 @@
+@mixin grid {
+    display: grid;
+    gap: 1.25rem;
+}
+
+@mixin grid-a-center {
+    display: grid;
+    align-items: center;
+}
+
+@mixin grid-a-end {
+    display: grid;
+    align-items: end;
+}
+
+@mixin grid-place-center {
+    display: grid;
+    place-content: center;
+}
+
+@mixin grid-a-start {
+    display: grid;
+    align-items: start;
+}
+
+@mixin flex-center-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin flex-start-between {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+
+@mixin flex-center-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+}
+
+@mixin flex-end {
+    display: flex;
+    align-items: end;
+}
+
+@mixin flex__center {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin section {
+    padding-top: clamp(4.5rem, 10vw, 8.5rem);
+    padding-bottom: clamp(1.5rem, 10vw, 8.5rem);
+}
+
+@mixin letter-flex {
+    display: flex;
+    align-items: center;
+    position: relative;
+    letter-spacing: -1.5px;
+}
+
+@mixin container {
+    max-width: 968px;
+    margin-left: clamp(1rem, 4vw, 4.5rem);
+    margin-right: clamp(1rem, 4vw, 4.5rem);
+
+    @include mq(mq5) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    @include mq(mq6) {
+        max-width: 1080px;
+    }
+}
+
+@mixin mq($query) {
+    @if $query ==mq1 {
+        @media (min-width: 329px) {
+            @content;
+        }
+    }
+
+    @if $query ==mq1fold {
+        @media (max-width: 280px) {
+            @content;
+        }
+    }
+
+    @if $query ==mqxslider {
+        @media (min-width: 371px) {
+            @content;
+        }
+    }
+
+    @if $query ==mqyslider {
+        @media (min-width: 500px) {
+            @content;
+        }
+    }
+
+    @if $query ==mq2 {
+        @media (min-width: 556px) {
+            @content;
+        }
+    }
+
+    @if $query ==mqzslider {
+        @media (min-width: 620px) {
+            @content;
+        }
+    }
+
+    @if $query ==mqaslider {
+        @media (min-width: 700px) {
+            @content;
+        }
+    } @else if $query ==mq3 {
+        @media (min-width: 767px) {
+            @content;
+        }
+    } @else if $query ==mq3slider {
+        @media (min-width: 850px) {
+            @content;
+        }
+    } @else if $query ==mq3x {
+        @media (min-width: 975px) {
+            @content;
+        }
+    } @else if $query ==mq4 {
+        @media (min-width: 1023px) {
+            @content;
+        }
+    } @else if $query ==mq5 {
+        @media (min-width: 1040px) {
+            @content;
+        }
+    } @else if $query ==mq6 {
+        @media (min-width: 1496px) {
+            @content;
+        }
+    } @else if $query ==mq7 {
+        @media (min-width: 2500px) {
+            @content;
+        }
+    }
+}

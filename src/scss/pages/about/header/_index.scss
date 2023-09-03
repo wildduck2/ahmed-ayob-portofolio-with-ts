@@ -1,0 +1,10 @@
+.about-header {
+    li.btn-text {
+        &:nth-child(2) {
+            .dot {
+                opacity: 1;
+                scale: 1;
+            }
+        }
+    }
+}

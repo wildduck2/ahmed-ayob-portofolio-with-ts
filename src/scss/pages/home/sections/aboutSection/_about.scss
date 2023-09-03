@@ -1,0 +1,81 @@
+@use '../../../../base' as *;
+@use '../../../../utils' as *;
+
+.about-section {
+    @include section;
+
+    @include mq(mq6) {
+        scale: 1.2;
+    }
+
+    .about-conainer {
+        position: relative;
+        @include container;
+        display: grid;
+
+        .word {
+            padding-top: 0.3rem;
+            overflow: hidden;
+
+            .char {
+                transform: translateY(-5px);
+            }
+        }
+
+        .about-title {
+            gap: 0.5rem;
+            font-size: clamp(
+                size('titles-size'),
+                6.5vw,
+                size('gaint-size') + 0.5rem
+            );
+            font-weight: weight('w-500');
+            margin-bottom: clamp(0.8rem, 4vw, 2.5rem);
+
+            & > * {
+                pointer-events: none;
+            }
+        }
+
+        p {
+            font-size: clamp(size('paragrph-size'), 4vw, size('big-size'));
+            width: clamp(80%, 4vw, 90%);
+
+            & > * {
+                pointer-events: none;
+            }
+        }
+
+        .arrow {
+            position: absolute;
+            width: clamp(70%, 16vw, 130%);
+            right: clamp(8.5rem, 15vw, 11rem);
+            top: -1.5rem;
+            transform-origin: center;
+
+            & path {
+                stroke-dasharray: 1000;
+                stroke-dashoffset: 1000;
+                animation: strokeAnimation 2s linear forwards;
+            }
+        }
+
+        .about-btn-arow-group {
+            position: relative;
+            place-self: end;
+
+            a > * {
+                pointer-events: none;
+            }
+
+            a {
+                @include grid-place-center;
+            }
+
+            @include mq(mq4) {
+                margin-bottom: 5rem;
+                margin-right: 6%;
+            }
+        }
+    }
+}

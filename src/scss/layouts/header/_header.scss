@@ -1,0 +1,76 @@
+@use '../../utils' as *;
+@use '../../base' as *;
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-bottom: -4rem;
+    z-index: 2;
+    background-color: $clr-gray;
+    transition: background-color 2.1s;
+
+    @include mq(mq6) {
+        padding-block: 1rem 3rem;
+    }
+
+    .header-container {
+        @include flex-center-between;
+        @include container;
+        height: 3.5rem;
+        margin-inline: 1.5rem;
+
+        @include mq(mq3) {
+            padding-top: 3rem;
+        }
+        @include mq(mq6) {
+            max-width: 1290px;
+        }
+    }
+}
+.white-header {
+    background-color: $clr-white;
+
+    .header-container {
+        .logo {
+            p {
+                color: $clr-black;
+            }
+
+            .mark-img {
+                fill: $clr-black;
+            }
+        }
+
+        .menu {
+            color: $clr-black;
+
+            &::after {
+                background-color: $clr-black;
+            }
+        }
+    }
+}
+
+.black-header {
+    background-color: $clr-black;
+    .header-container {
+        .logo {
+            p {
+                color: $clr-white;
+            }
+            .mark-img {
+                fill: $clr-white;
+            }
+        }
+
+        .menu {
+            color: $clr-black;
+
+            &::after {
+                background-color: $clr-black;
+            }
+        }
+    }
+}

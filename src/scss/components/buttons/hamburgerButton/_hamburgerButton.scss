@@ -1,0 +1,68 @@
+@use '../../../base' as *;
+@use '../../../utils' as *;
+
+.hamburger-button-wrapper {
+    position: fixed;
+    top: clamp(1rem, 4vw, 7rem);
+    right: clamp(1rem, 4vw, 18rem);
+    transition: transform 0.4s cubic-bezier(0.36, 0, 0.66, 0);
+    transform: translateY(0%) scale(0) rotate(0.001deg);
+    z-index: 210;
+
+    &.show-hamburger-scroll {
+        transform: translateY(0%) scale(1) rotate(0.001deg);
+    }
+
+    &.active-hamburger {
+        transform: translateY(0%) scale(1) rotate(0.001deg);
+
+        .hamburger-btn {
+            background-color: $clr-orange-dark;
+
+            .btn-text {
+                span {
+                    &:nth-child(1) {
+                        transform: rotate(45deg) translate(3px, 3px);
+                    }
+
+                    &:nth-child(2) {
+                        transform: rotate(-45deg) translate(1px, 0);
+                    }
+                }
+            }
+        }
+    }
+
+    .hamburger-btn {
+        width: clamp(70px, 14vw, 100px);
+        height: clamp(70px, 14vw, 100px);
+
+        transition: background-color 0.25s cubic-bezier(0.36, 0, 0.66, 0),
+            box-shadow 0.25s cubic-bezier(0.36, 0, 0.66, 0);
+
+        overflow: hidden;
+
+        .btn-text {
+            @include grid-place-center;
+            gap: 0.3rem;
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+            pointer-events: none;
+
+            span {
+                display: block;
+                height: 2px;
+                width: clamp(32px, 10vw, 47px);
+                border-radius: 50rem;
+                background: $clr-white;
+                transform-origin: center;
+                transition: all 0.3s cubic-bezier(0.7, 0, 0.3, 1);
+
+                @include mq(mq2) {
+                    width: clamp(32px, 14vw, 47px);
+                }
+            }
+        }
+    }
+}

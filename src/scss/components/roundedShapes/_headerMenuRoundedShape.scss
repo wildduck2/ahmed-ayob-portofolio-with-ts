@@ -1,0 +1,41 @@
+@use '../../utils' as *;
+@use '../../base' as *;
+
+.header-menu-rounded-shape {
+    position: absolute;
+    top: 0;
+    left: 1px;
+    transform: translateX(-100%);
+    height: 100%;
+    z-index: 10000;
+
+    .rounded-div-wrap {
+        position: relative;
+        top: 0;
+        height: 100%;
+        width: 20vw;
+        transition: all 0.85s cubic-bezier(0.7, 0, 0.2, 1);
+        will-change: width;
+        overflow: hidden;
+        z-index: 10000;
+
+        .rounded-div {
+            width: 775%;
+            content: '';
+            display: block;
+            position: absolute;
+            height: 150%;
+            top: 50%;
+            left: 50%;
+            background: $clr-black;
+            border-radius: 50%;
+            border: 1px solid transparent;
+            transform: translate(-6.5%, -50%);
+            z-index: 10000;
+        }
+    }
+}
+
+.contact-border {
+    border: 1px solid $clr-border-solid-light;
+}

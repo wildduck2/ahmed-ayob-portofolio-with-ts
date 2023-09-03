@@ -1,0 +1,15 @@
+@use '../utils/colors' as *;
+
+@use '../base/typography' as *;
+
+@function size($size) {
+    @return map-get($sizes, $size );
+}
+
+@function weight($weight) {
+    @return map-get($weights, $weight );
+}
+
+@function index($index) {
+    @return map-get($z-index, $index );
+}

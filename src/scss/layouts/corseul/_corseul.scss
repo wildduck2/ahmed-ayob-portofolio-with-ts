@@ -1,0 +1,57 @@
+@use '../../utils' as *;
+@use '../../base' as *;
+
+.card-slider {
+    @include grid-a-center;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    height: 350px;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-arrow-color: transparent;
+    user-select: none;
+    padding-left: 8%;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    @include mq(mq1) {
+        height: 420px;
+    }
+
+    @include mq(mqxslider) {
+        padding-left: 16%;
+    }
+
+    @include mq(mqyslider) {
+        padding-left: 24%;
+    }
+
+    @include mq(mq2) {
+        grid-auto-columns: calc((100% / 2));
+        gap: 0;
+        padding-left: 0;
+    }
+
+    @include mq(mqzslider) {
+        gap: 1rem;
+    }
+
+    @include mq(mq3) {
+        grid-auto-columns: calc((100% / 3) - 15px);
+        gap: 1.1rem;
+        padding-left: 0;
+        height: 600px;
+    }
+
+    @include mq(mq5) {
+    }
+
+    .card-wrapper {
+        height: fit-content;
+        height: fit-content;
+    }
+}

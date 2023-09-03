@@ -1,0 +1,10 @@
+.works-header {
+    li.btn-text {
+        &:first-child {
+            .dot {
+                opacity: 1;
+                scale: 1;
+            }
+        }
+    }
+}

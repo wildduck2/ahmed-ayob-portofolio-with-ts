@@ -1,0 +1,252 @@
+@use '../../../../../scss/utils' as *;
+@use '../../../../../scss/base' as *;
+
+.second-col-works {
+    .filters-wrapper {
+        @include flex-center-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+
+        & div {
+            @include flex-center;
+            gap: clamp(0.5rem, 2.5vw, 1.5rem);
+
+            .filter-button {
+                @include grid-a-center;
+                font-size: clamp(size('small-size'), 2.5vw, size('big-size'));
+                font-weight: weight('w-500');
+                padding: 0.6rem 0.8rem;
+                padding-inline: clamp((0.9rem), 3vw, (2rem));
+                padding-block: 0.8rem;
+                border: 0.125rem solid $clr-black;
+                border-radius: 3.125rem;
+                outline: none;
+                background-color: $clr-white;
+                cursor: pointer;
+                transition: all 0.3s ease-out;
+
+                &:hover {
+                    background-color: $clr-black;
+                    color: $clr-white;
+
+                    svg {
+                        fill: $clr-white;
+                    }
+                }
+
+                &.active {
+                    background-color: $clr-black;
+                    color: $clr-white;
+
+                    &:hover {
+                        background-color: $clr-black-dark;
+
+                        svg {
+                            fill: $clr-white;
+                        }
+                    }
+
+                    svg {
+                        fill: $clr-white;
+                    }
+                }
+            }
+
+            & .alpha {
+                padding: 0;
+
+                div {
+                    @include flex-center-center;
+                    height: clamp(2.724rem, 6vw, 3.425rem);
+                    width: clamp(2.724rem, 6vw, 3.825rem);
+                    svg {
+                        fill: $clr-black;
+                    }
+                }
+            }
+        }
+    }
+
+    .projects-wrapper {
+        @include grid-a-center;
+        padding-block: clamp(4rem, 3vw, 4rem);
+
+        &.menu {
+            & .propject-table-line {
+                @include flex-center-between;
+            }
+
+            & li {
+                font-family: $Poppins;
+                padding-inline: clamp(1rem, 3vw, 4rem);
+                padding: clamp(2rem, 2.5vw, 3.5rem);
+                font-weight: weight('w-600');
+                text-transform: capitalize;
+                cursor: pointer;
+                text-align: center;
+                color: $clr-black-dark;
+                color: $clr-orange;
+                font-size: clamp(
+                    size('medium-size') + 0.2rem,
+                    4.5vw,
+                    size('big-size') + 0.2rem
+                );
+            }
+
+            .seperator {
+                width: 100%;
+                height: 2px;
+                background-color: $clr-black;
+                will-change: transform;
+            }
+            .projects-conatiner-animation {
+                .propject {
+                    font-family: $Inter;
+
+                    font-size: clamp(
+                        size('medium-size') + 0.2rem,
+                        4.5vw,
+                        size('big-size') + 0.2rem
+                    );
+                    font-weight: weight('w-400');
+                    color: $clr-black;
+
+                    svg {
+                        display: none;
+                    }
+
+                    div {
+                        & > div {
+                            @include flex-center-between;
+
+                            span {
+                                width: min-content;
+                            }
+                        }
+                    }
+
+                    .card__img-filtered {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        &.grid {
+            .propject-table-line,
+            .seperator {
+                display: none;
+            }
+
+            & li {
+                font-size: clamp(
+                    size('medium-size'),
+                    4.5vw,
+                    size('titles-size')
+                );
+                color: $clr-black-dark;
+                color: $clr-orange;
+            }
+
+            .projects-conatiner-animation {
+                @include grid-a-center;
+                place-self: center;
+                grid-template-columns: repeat(1, 1fr);
+                gap: clamp(2rem, 1vw, 6rem);
+
+                @include mq(mq3) {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+                @include mq(mq4) {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+
+                li {
+                    @include grid-a-center;
+                    position: relative;
+                    opacity: 1;
+                    border-radius: 8px;
+                    padding-inline: clamp(1rem, 1vw, 3rem);
+                    padding-block: clamp(2rem, 1vw, 3rem);
+                    background-color: $clr-black;
+                    box-shadow: 0 7px 18px rgba(0, 0, 0, 0.218);
+                    overflow: hidden;
+
+                    & > * {
+                        pointer-events: none;
+                    }
+
+                    & > div {
+                        @include flex-end;
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        padding-inline: 2rem;
+                        padding-bottom: 2.5rem;
+                        gap: clamp(0.5rem, 4vw, 1rem);
+                        font-size: 1.2rem;
+                        text-transform: capitalize;
+                        font-weight: weight('w-600');
+                        backdrop-filter: blur(2px);
+                        color: $clr-white;
+                        border-radius: 8px;
+                        opacity: 0;
+                        clip-path: circle(50px at 10% 10%);
+                        transition: all 0.3s ease-out;
+
+                        div {
+                            margin-bottom: -2rem;
+                            transition: all 0.3s ease-out;
+                            opacity: 0;
+
+                            &:first-child {
+                                @include grid-a-center;
+
+                                gap: 0.8rem;
+                                width: 90%;
+                                align-content: end;
+                            }
+
+                            &:last-child {
+                                @include flex-center-center;
+                                gap: 0.5rem;
+                                align-content: end;
+
+                                svg {
+                                    cursor: pointer;
+                                    width: 30px;
+                                    height: 30px;
+                                    border-radius: 2rem;
+                                    transition: all 0.3s ease-out;
+
+                                    &:hover {
+                                        background-color: $clr-white;
+                                        fill: $clr-black;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .card__img-filtered {
+                        display: block;
+                        border-radius: 9px;
+                    }
+
+                    &:hover {
+                        & > div {
+                            opacity: 1;
+                            background-color: rgba(0, 0, 0, 0.25);
+                            clip-path: circle(150% at 0 0);
+                            div {
+                                margin-bottom: 0rem;
+                                opacity: 1;
+                                transition: all 0.3s ease-out 0.2s;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

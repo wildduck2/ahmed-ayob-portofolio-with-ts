@@ -1,0 +1,56 @@
+@use '../../base' as *;
+@use '../../utils' as *;
+
+.thanks-card {
+    @include grid-place-center;
+    gap: 2rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: clamp(size('small-size'), 1.5vw, size('big-size'));
+    font-weight: weight(w-600);
+    text-transform: capitalize;
+    text-align: center;
+    min-width: 250px;
+    width: 80vw;
+    padding: 10vw;
+    border-radius: 12px;
+    background-color: $clr-orange-dark;
+    color: $clr-white;
+    box-shadow: 0 6px 10px #00000056;
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.1s ease-in;
+
+    p {
+        color: #eee;
+    }
+
+    button {
+        place-self: center;
+        width: fit-content;
+        height: fit-content;
+        font-size: clamp(size('small-size'), 2vw, size('big-size'));
+        text-align: center;
+        padding-inline: clamp(2.5rem, 8vw, 4rem);
+        padding-block: clamp(0.5rem, 5vw, 1.1rem);
+        margin-bottom: 1rem;
+        border-radius: 6.25rem;
+        border: 1px solid $clr-black-dark;
+
+        .btn-fill {
+            background-color: $clr-orange;
+        }
+
+        & > * {
+            pointer-events: none;
+        }
+    }
+
+    &.show {
+        opacity: 1;
+        pointer-events: all;
+    }
+}

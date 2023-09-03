@@ -1,0 +1,78 @@
+@use '../../base' as *;
+@use '../../utils' as *;
+
+.header-desktop-menu {
+    display: none;
+    gap: 3rem;
+    margin-bottom: -14px;
+
+    @include mq(mq4) {
+        @include flex-center-center;
+    }
+
+    li {
+        display: none;
+        justify-content: center;
+
+        @include mq(mq4) {
+            @include grid-place-center;
+        }
+
+        a {
+            display: grid;
+            font-size: clamp(size('titles-size'), 1.7vw, size('gaint-size'));
+
+            .dot {
+                justify-self: center;
+                width: 8px;
+                height: 8px;
+                background-color: $clr-white;
+                border-radius: 50%;
+                margin-top: 0.3rem;
+                opacity: 0;
+                scale: 0.5;
+                transition: 0.3s ease-out;
+
+                @include mq(mq6) {
+                    width: 11px;
+                    height: 11px;
+                }
+            }
+            &:hover .dot {
+                opacity: 1;
+                scale: 1;
+            }
+
+            &.show {
+                .dot {
+                    opacity: 1;
+                    scale: 1;
+                }
+            }
+        }
+    }
+}
+
+.black-header .header-desktop-menu {
+    li {
+        a {
+            color: $clr-white;
+
+            .dot {
+                background-color: $clr-white;
+            }
+        }
+    }
+}
+
+.white-header .header-desktop-menu {
+    li {
+        a {
+            color: $clr-black;
+
+            .dot {
+                background-color: $clr-black;
+            }
+        }
+    }
+}
