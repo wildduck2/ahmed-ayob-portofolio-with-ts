@@ -20,7 +20,7 @@
             .logo-text {
                 width: fit-content;
                 font-size: clamp(
-                    size('titles-size'),
+                    size('titles-size') - .15rem,
                     1.7vw,
                     size('gaint-size')
                 );
