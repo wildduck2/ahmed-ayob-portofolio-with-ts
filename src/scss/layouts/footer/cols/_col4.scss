@@ -1,77 +1,73 @@
-@use '../../../utils' as *;
-@use '../../../base' as *;
+@use "../../../utils" as *;
+@use "../../../base" as *;
 
 .forth-col {
+  @include flex-center-between;
+  flex-wrap: wrap;
+  gap: clamp(0rem, 3vw, 1rem);
+
+  &.footer-Page {
+    background-color: $clr-black;
+  }
+
+  .flex-footer {
     @include flex-center-between;
-    flex-wrap: wrap;
-    gap: clamp(0rem, 3vw, 1rem);
+    margin-top: 0.5rem;
+    gap: clamp(0rem, 30vw, 6rem);
+  }
 
-    &.footer-Page {
-        background-color: $clr-black;
+  .first-row {
+    .social-link {
+      position: relative;
+
+      &::after {
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 2px;
+        inset: auto 0 0 0;
+        margin: 0 auto;
+        transform-origin: right;
+        background-color: $clr-white;
+        transition: 0.3s ease-in-out;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
     }
 
-    .flex-footer {
-        @include flex-center-between;
-        margin-top: 0.5rem;
-        gap: clamp(0rem, 30vw, 6rem);
+    div {
+      @include flex-center;
+      gap: 2rem;
+
+      svg {
+        width: clamp(
+          (size("gaint-size") - 0.5rem),
+          8vw,
+          (size("gaint-size") + 0.5rem)
+        );
+        height: clamp(
+          (size("gaint-size") - 0.5rem),
+          8vw,
+          (size("gaint-size") + 0.5rem)
+        );
+        fill: $clr-white;
+        pointer-events: none;
+      }
     }
 
-    .first-row {
-        .social-link {
-            position: relative;
-
-            &::after {
-                position: absolute;
-                content: '';
-                width: 0;
-                height: 2px;
-                inset: auto 0 0 0;
-                margin: 0 auto;
-                transform-origin: right;
-                background-color: $clr-white;
-                transition: 0.3s ease-in-out;
-            }
-
-            &:hover::after {
-                width: 100%;
-            }
-        }
-
-        div {
-            @include flex-center;
-            gap: 2rem;
-
-            svg {
-                width: clamp(
-                    (size('gaint-size') - 0.5rem),
-                    8vw,
-                    (size('gaint-size') + 0.5rem)
-                );
-                height: clamp(
-                    (size('gaint-size') - 0.5rem),
-                    8vw,
-                    (size('gaint-size') + 0.5rem)
-                );
-                fill: $clr-white;
-                pointer-events: none;
-            }
-        }
-
-        h3 {
-            font-size: clamp(
-                (size('small-size') - 0.1rem),
-                4vw,
-                size('titles-size')
-            );
-            font-weight: weight('w-400');
-            color: $clr-gray;
-            margin-bottom: clamp(0.5rem, 4vw, 1.5rem);
-        }
-
-        p {
-            color: $clr-white;
-            font-size: clamp(size('paragrph-size'), 4vw, size('big-size'));
-            font-weight: weight('w-500');
-        }
+    h3 {
+      font-size: clamp((size("small-size") - 0.1rem), 4vw, size("titles-size"));
+      font-weight: weight("w-400");
+      color: $clr-gray;
+      margin-bottom: clamp(0.5rem, 4vw, 1.5rem);
     }
+
+    p {
+      color: $clr-white;
+      font-size: clamp(size("paragrph-size"), 4vw, size("big-size"));
+      font-weight: weight("w-400");
+    }
+  }
 }

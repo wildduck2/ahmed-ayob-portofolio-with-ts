@@ -15,7 +15,7 @@
     },
     "dependencies": {
         "@barba/core": "^2.9.7",
-        "gsap": "^3.12.2",
+        "gsap": "^3.12.4",
         "scss": "^0.2.4",
         "split-type": "^0.3.3"
     }

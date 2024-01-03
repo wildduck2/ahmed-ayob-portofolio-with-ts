@@ -1,97 +1,98 @@
-@use '../../base' as *;
-@use '../../utils' as *;
+@use "../../base" as *;
+@use "../../utils" as *;
 
 .digital-ball,
 .about-globe {
+  @include mq(mq1) {
+    place-content: end;
+    display: flex;
+  }
+
+  @include mq(mq6) {
+    // zoom: 1.15;
+  }
+
+  .globe {
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    overflow: hidden;
+    will-change: transform;
+
+    width: clamp(2.7em, 18vw, 10em);
+    height: clamp(2.7em, 18vw, 10em);
     @include mq(mq1) {
-        margin-bottom: clamp(3rem, 4vw, 4rem);
     }
 
-    @include mq(mq6) {
-        // zoom: 1.15;
-    }
+    .globe-wrap {
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      display: block;
+      border-radius: 50%;
+      transform: translate(-50%, -50%) rotate(30deg);
+      animation: globe 5.4s cubic-bezier(0.35, 0, 0.65, 1) infinite;
+      overflow: hidden;
+      box-shadow: inset 0px 0px 0px 0.125em $clr-white;
 
-    .globe {
-        width: 2em;
-        height: 2em;
+      @include mq(mq2) {
+        box-shadow: inset 0px 0px 0px 0.225em $clr-white;
+      }
+
+      @include mq(mq5) {
+        box-shadow: inset 0px 0px 0px 0.27em $clr-white;
+      }
+
+      .circle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        transform: translate(-50%, -50%);
         border-radius: 50%;
-        overflow: hidden;
-        will-change: transform;
+        box-shadow: inset 0.1em 0px 0px 0.08em $clr-white;
+        animation: circle1 2.7s linear infinite;
+        font-size: 0.75em;
 
-        @include mq(mq1) {
-            width: clamp(3em, 8vw, 10em);
-            height: clamp(3em, 8vw, 10em);
+        &:nth-child(1) {
+          animation-delay: -1.8s;
         }
 
-        .globe-wrap {
-            top: 50%;
-            left: 50%;
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            display: block;
-            border-radius: 50%;
-            transform: translate(-50%, -50%) rotate(30deg);
-            animation: globe 5.4s cubic-bezier(0.35, 0, 0.65, 1) infinite;
-            overflow: hidden;
-            box-shadow: inset 0px 0px 0px 0.125em $clr-white;
-
-            @include mq(mq2) {
-                box-shadow: inset 0px 0px 0px 0.225em $clr-white;
-            }
-
-            @include mq(mq5) {
-                box-shadow: inset 0px 0px 0px 0.27em $clr-white;
-            }
-
-            .circle {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                width: 100%;
-                height: 100%;
-                transform: translate(-50%, -50%);
-                border-radius: 50%;
-                box-shadow: inset 0.1em 0px 0px 0.08em $clr-white;
-                animation: circle1 2.7s linear infinite;
-                font-size: 0.75em;
-
-                &:nth-child(1) {
-                    animation-delay: -1.8s;
-                }
-
-                &:nth-child(2) {
-                    animation-delay: -9s;
-                }
-            }
-
-            .circle-hor {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                width: 150%;
-                transform: translate(-50%, -50%);
-                border-radius: 50%;
-                height: 55%;
-                box-shadow: inset 0px 0px 0px 0.15em $clr-white;
-                font-size: clamp(0.75em, 4vw, 1.8em);
-            }
-
-            .circle-hor-middle {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                width: 150%;
-                transform: translate(-50%, -50%);
-                border-radius: 0%;
-                height: clamp(0.15em, 4vw, 0.3em);
-                background: $clr-white;
-                font-size: 0.75em;
-            }
+        &:nth-child(2) {
+          animation-delay: -9s;
         }
+      }
+
+      .circle-hor {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 150%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        height: 55%;
+        box-shadow: inset 0px 0px 0px 0.15em $clr-white;
+        font-size: clamp(0.75em, 4vw, 1.8em);
+      }
+
+      .circle-hor-middle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 150%;
+        transform: translate(-50%, -50%);
+        border-radius: 0%;
+        height: clamp(0.15em, 4vw, 0.3em);
+        background: $clr-white;
+        font-size: 0.75em;
+      }
     }
+  }
 }
 
 .digital-ball .globe {
-    margin-bottom: clamp(1rem, 4vw, 4rem);
+  margin-bottom: clamp(1rem, 4vw, 2rem);
 }

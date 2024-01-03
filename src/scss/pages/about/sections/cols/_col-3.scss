@@ -1,39 +1,39 @@
-@use '../../../../../scss/utils' as *;
-@use '../../../../../scss/base' as *;
+@use "../../../../../scss/utils" as *;
+@use "../../../../../scss/base" as *;
 
 .third-col-about {
-    @include grid-place-center;
-    gap: 1rem;
+  @include grid-place-center;
+  gap: 1rem;
 
-    @include mq(mqyslider) {
-        font-size: size('big-size');
-        margin-top: 3rem;
+  @include mq(mqyslider) {
+    font-size: size("big-size");
+    margin-top: 3rem;
+  }
+
+  @include mq(mq5) {
+    @include flex-center-between;
+    padding-block: 0 7rem;
+  }
+
+  div {
+    @include grid-a-center;
+
+    gap: 1.5rem;
+
+    h2,
+    p {
+      overflow: hidden;
     }
 
-    @include mq(mq5) {
-        @include flex-center-between;
-        padding-block: 0;
+    p {
+      line-height: 1.3rem;
+      font-size: clamp(size("medium-size"), 4vw, size("titles-size"));
     }
+  }
 
-    div {
-        @include grid-a-center;
-
-        gap: 1.5rem;
-
-        h2,
-        p {
-            overflow: hidden;
-        }
-
-        p {
-            line-height: 1.3rem;
-            font-size: clamp(size('medium-size'), 4vw, size('titles-size'));
-        }
-    }
-
-    img {
-        justify-self: center;
-        display: block;
-        width: 75%;
-    }
+  img {
+    justify-self: center;
+    display: block;
+    width: 75%;
+  }
 }

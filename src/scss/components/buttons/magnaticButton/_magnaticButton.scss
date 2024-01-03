@@ -1,75 +1,87 @@
-@use '../../../base' as *;
-@use '../../../utils' as *;
+@use "../../../base" as *;
+@use "../../../utils" as *;
 
 .btn-text {
-    display: grid;
-    outline: none;
-    border: none;
-    background: none;
+  display: grid;
+  outline: none;
+  border: none;
+  background: none;
 
-    font-family: $Inter;
-    font-size: clamp(size('small-size'), 4vw, size('big-size'));
-    font-weight: weight('w-500');
+  font-family: $Inter;
+  font-size: clamp(
+    0.75rem,
+    0.6485294117647059rem + 0.5637254901960783vw,
+    1.325rem
+  );
+  font-weight: weight("w-400");
 
+  color: $clr-white;
+  will-change: transform;
+  transform-style: preserve-3d;
+  transform: translateZ(0) rotate(0.001deg);
+  cursor: pointer;
+
+  a {
     color: $clr-white;
-    will-change: transform;
-    transform-style: preserve-3d;
-    transform: translateZ(0) rotate(0.001deg);
-    cursor: pointer;
-
-    a {
-        color: $clr-white;
-    }
+  }
 }
 
 .btn-radius {
-    display: inline-block;
-    outline: none;
-    border: none;
-    width: clamp(120px, 18vw, 200px);
-    height: clamp(120px, 18vw, 200px);
-    transform: translateZ(0) rotate(0.001deg);
+  display: inline-block;
+  outline: none;
+  border: none;
+  width: clamp(120px, 18vw, 200px);
+  height: clamp(120px, 18vw, 200px);
+  transform: translateZ(0) rotate(0.001deg);
 
-    font-family: $Inter;
-    font-size: clamp(size('paragrph-size'), 4vw, size('titles-size'));
-    background: $clr-black;
-    color: $clr-white;
+  font-family: $Inter;
+  font-size: clamp(
+    0.75rem,
+    0.6485294117647059rem + 0.5637254901960783vw,
+    1.325rem
+  );
+  background: $clr-black;
+  color: $clr-white;
 
-    border-radius: 50%;
-    will-change: transform;
-    cursor: pointer;
-    overflow: hidden;
-    transform-style: preserve-3d;
+  border-radius: 50%;
+  will-change: transform;
+  cursor: pointer;
+  overflow: hidden;
+  transform-style: preserve-3d;
 
-    & > * {
-        pointer-events: none;
-    }
+  & > * {
+    pointer-events: none;
+  }
 }
 
 .btn-solid-horizon {
-    outline: none;
-    border: 1px solid $clr-border-light;
-    width: fit-content;
-    height: fit-content;
-    padding-inline: clamp(2.5rem, 8vw, 4rem);
-    padding-block: clamp(0.5rem, 5vw, 1.1rem);
-    transform: translateZ(0) rotate(0.001deg);
+  outline: none;
+  border: 1px solid $clr-border-light;
+  width: fit-content;
+  height: fit-content;
+  padding-inline: clamp(2.5rem, 8vw, 4rem);
+  padding-block: clamp(0.5rem, 5vw, 1.1rem);
+  transform: translateZ(0) rotate(0.001deg);
 
-    font-family: $Inter;
-    font-size: clamp(size('paragrph-size'), 4vw, size('titles-size'));
-    background: $clr-black;
-    color: $clr-white;
+  font-family: $Inter;
+  font-size: clamp(
+    0.75rem,
+    0.6485294117647059rem + 0.5637254901960783vw,
+    1.325rem
+  );
+  background: $clr-black;
+  color: $clr-white;
 
-    border-radius: 6.25rem;
-    will-change: transform;
-    cursor: pointer;
-    overflow: hidden;
-    transform-style: preserve-3d;
+  border-radius: 6.25rem;
+  will-change: transform;
+  cursor: pointer;
+  overflow: hidden;
+  transform-style: preserve-3d;
 
-    & > * {
-        pointer-events: none;
-    }
+  & > * {
+    pointer-events: none;
+  }
 
-    text-align: center;
-    margin-bottom: 1rem;
+  text-align: center;
+  margin-bottom: 1rem;
 }

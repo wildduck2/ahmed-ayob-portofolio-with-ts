@@ -1,85 +1,62 @@
-@use '../../../../base' as *;
-@use '../../../../utils' as *;
+@use "../../../../base" as *;
+@use "../../../../utils" as *;
 section {
-    width: 100vw;
+  width: 100vw;
 }
 .hero-section {
-    background-color: $clr-gray;
-    .hero-container {
-        position: relative;
+  background-color: $clr-gray;
+  .hero-container {
+    position: relative;
 
-        .hero-img {
-            display: inline-block;
-            height: 110vh;
-            overflow: hidden;
+    .hero-img {
+      display: inline-block;
+      height: 110vh;
+      width: 100%;
+      overflow: hidden;
 
-            img {
-                height: 110vh;
-                object-fit: cover;
-            }
+      img {
+        height: 110vh;
+        object-fit: cover;
+
+        @include mq(mq5) {
+          object-fit: contain;
         }
-
-        .hero-text {
-            @include grid-a-end;
-
-            position: absolute;
-            grid-template-columns: 5fr 1fr;
-            max-width: 968px;
-            bottom: 19%;
-            left: 0;
-            right: 0;
-            margin-inline: 1rem;
-            color: $clr-white;
-
-            @include mq(mq1) {
-                grid-template-columns: 4fr 1fr;
-                margin-inline: 1.5rem;
-            }
-
-            @include mq(mq2) {
-                grid-template-columns: 5fr 2fr;
-                margin: 0 2.5rem;
-            }
-
-            @include mq(mq3) {
-                grid-template-columns: 4fr 1fr;
-                margin: 0 3rem;
-            }
-
-            @include mq(mq4) {
-                grid-template-columns: 7fr 2fr;
-                margin: 0 4.5rem;
-            }
-
-            @include mq(mq5) {
-                margin: 0 auto;
-            }
-
-            // @include mq(mq6) {
-            //     max-width: 1300px;
-            // }
-
-            h1 {
-                font-size: clamp(
-                    size('gaint-size') - 0.9rem,
-                    8vw,
-                    size('gaint-size') + 2rem
-                );
-                font-weight: weight('w-500');
-                margin-top: clamp(1.5rem, 4vw, 5rem);
-
-                // @include mq(mq6) {
-                //     font-size: size('gaint-size') + 3rem;
-                // }
-
-                & > * {
-                    pointer-events: none;
-                }
-            }
-
-            .home-arrow {
-                width: clamp(25px, 4vw, 90px);
-            }
-        }
+      }
     }
+
+    .hero-text {
+      @include grid-a-end;
+      @include container;
+      position: absolute;
+      grid-template-columns: 5fr 1fr;
+      max-width: 1290px;
+      bottom: 19%;
+      left: 0;
+      right: 0;
+      margin-inline: 1rem;
+      color: $clr-white;
+
+      @include mq(mq5y) {
+        margin: 0 auto;
+      }
+
+      h1 {
+        font-size: clamp(
+          size("gaint-size") - 0.9rem,
+          7vw,
+          size("gaint-size") + 2rem
+        );
+        font-weight: weight("w-400");
+        margin-top: clamp(1.5rem, 4vw, 5rem);
+
+        & > * {
+          pointer-events: none;
+        }
+      }
+
+      .home-arrow {
+        width: clamp(25px, 7vw, 90px);
+      }
+    }
+  }
 }

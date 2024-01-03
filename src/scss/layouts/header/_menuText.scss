@@ -1,27 +1,31 @@
-@use '../../utils' as *;
-@use '../../base' as *;
+@use "../../utils" as *;
+@use "../../base" as *;
 
 .mobile-menu {
-    font-size: clamp(size('titles-size'), 1.7vw, size('gaint-size'));
+  font-size: clamp(
+    0.925rem,
+    0.7838235294117648rem + 0.7843137254901961vw,
+    1.725rem
+  );
 
-    &::after {
-        position: absolute;
-        content: '';
-        width: 5px;
-        height: 5px;
-        border-radius: 50%;
-        background-color: $clr-white;
-        left: -10px;
-        bottom: 35%;
+  &::after {
+    position: absolute;
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: $clr-white;
+    left: -10px;
+    bottom: 35%;
 
-        @include mq(mq3) {
-            width: 8px;
-            height: 8px;
-            left: -13px;
-        }
+    @include mq(mq3) {
+      width: 8px;
+      height: 8px;
+      left: -13px;
     }
+  }
 
-    @include mq(mq4) {
-        display: none;
-    }
+  @include mq(mq4) {
+    display: none;
+  }
 }
