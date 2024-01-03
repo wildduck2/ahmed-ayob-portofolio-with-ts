@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  base: "/ahmed-ayob-TheVimagen/",
+  base: "/",
   build: {
     rollupOptions: {
       input: {
