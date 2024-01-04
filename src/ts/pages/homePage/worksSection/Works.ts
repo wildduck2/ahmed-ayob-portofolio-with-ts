@@ -27,9 +27,8 @@ export const WorksAnimation = () => {
       scrollTrigger: {
         trigger: ".works-section",
         start: "top 90% ",
-        end: "center center",
+        end: "center 85%",
         scrub: 1,
-        // markers: true,
       },
     },
   });
@@ -50,30 +49,32 @@ export const WorksAnimation = () => {
     defaults: {
       scrollTrigger: {
         trigger: ".works-section",
-        start: "top 70% ",
-        end: "center 60%",
+        start: "top 90% ",
+        end: "center 85%",
         scrub: 1,
-        // markers: true,
       },
     },
   });
-  // card info fade in
+
   tl2.from(".card-info", 7, {
     y: `-100%`,
     rotation: 0.01,
     opacity: 0.1,
     stagger: 0.5,
   });
+
   tl2.from(".works-title", {
     y: `100%`,
     rotation: 0.01,
     opacity: 0,
   });
+
   tl2.from(".btn-nav", 1, {
     scale: 0.6,
     rotation: 0.01,
     opacity: 0,
   });
+
   tl2.from(".works-btn", 1, {
     scale: 0.6,
     rotation: 0.01,

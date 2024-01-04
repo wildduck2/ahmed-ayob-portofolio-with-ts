@@ -3,12 +3,11 @@
 
 .logo {
   & > div {
-    @include flex-center;
+    @include display(flex, center);
     white-space: nowrap;
     transition: 0.5s ease-in-out;
 
     .logo-text-wrapper {
-      width: clamp(113px, 22vw, 143px);
       overflow: hidden;
       transition: 0.7s ease-in-out;
       width: clamp(
@@ -16,12 +15,6 @@
         6.014705882352941rem + 5.821078431372549vw,
         13rem
       );
-      // @include mq(mq1) {
-      //   width: 180px;
-      // }
-      // @include mq(mq6) {
-      //   width: 208px;
-      // }
 
       .logo-text {
         width: fit-content;
@@ -35,13 +28,13 @@
     }
 
     .mark {
-      @include flex-center;
+      @include display(flex, center);
       padding: 0.1rem;
       z-index: 10;
 
       .mark-img {
-        width: clamp(18px, 4vw, 27px);
-        height: clamp(18px, 4vw, 27px);
+        width: clamp(18px, 4vw, 29px);
+        height: clamp(18px, 4vw, 29px);
         margin-bottom: -0.15rem;
         transition: 0.4s ease-out;
       }
@@ -66,7 +59,7 @@
         }
       }
       .mark-img {
-        transform: rotate(360deg);
+        transform: rotate(-360deg);
       }
     }
   }

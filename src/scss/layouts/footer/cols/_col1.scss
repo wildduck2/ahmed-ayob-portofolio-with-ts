@@ -7,12 +7,12 @@
   z-index: 0;
 
   .col-text {
-    @include grid;
+    @include display(grid);
     color: $clr-white;
     gap: clamp(0rem, 2vw, 1.25rem);
 
     .wrapper {
-      @include flex-end;
+      @include display(flex, flex-end);
 
       img {
         width: clamp(3rem, 14vw, 6.25rem);
@@ -23,7 +23,7 @@
 
     h2 {
       position: relative;
-      font-size: clamp(size("gaint-size"), 12vw, size("gaint-size") + 3rem);
+      font-size: clamp(size("gaint-size"), 12vw, size("gaint-size") + 3.5rem);
       font-weight: weight("w-400");
       overflow: hidden;
 

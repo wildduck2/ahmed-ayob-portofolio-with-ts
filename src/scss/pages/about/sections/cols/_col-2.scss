@@ -2,7 +2,7 @@
 @use "../../../../../scss/base" as *;
 
 .second-col-about {
-  @include grid-a-center;
+  @include display(grid, center);
 
   span {
     color: $clr-orange;
@@ -23,7 +23,7 @@
 
   & > div {
     position: relative;
-    @include grid-a-center;
+    @include display(grid, center);
     gap: clamp(2rem, 4vw, 3rem);
     line-height: clamp(1.3rem, 4vw, 1.8rem);
     font-size: clamp(size("medium-size"), 4vw, size("big-size"));
@@ -36,7 +36,7 @@
     }
 
     @include mq(mq3) {
-      @include flex-start-between;
+      @include display(flex, flex-start, space-between);
       img {
         width: clamp(45%, 4vw, 55%);
       }
@@ -46,7 +46,7 @@
       position: relative;
       margin-top: -3rem;
       @include mq(mq3) {
-        @include grid-a-center;
+        @include display(grid, center);
         gap: 1rem;
         max-width: 500px;
       }

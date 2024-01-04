@@ -1,37 +1,38 @@
-@use '../../../scss/utils' as *;
-@use '../../../scss/base' as *;
+@use "../../../scss/utils" as *;
+@use "../../../scss/base" as *;
 
 .error-page {
-    @include section;
-    @include grid-place-center;
-    gap: clamp(1rem, 4vw, 4rem);
-    font-size: clamp(size('small-size'), 5vw, size('big-size'));
+  @include section;
+  @include display(grid);
+  place-content: center;
+  gap: clamp(1rem, 4vw, 4rem);
+  font-size: clamp(size("small-size"), 5vw, size("big-size"));
 
-    height: 100vh;
-    color: $clr-white;
+  height: 100vh;
+  color: $clr-white;
+  text-align: center;
+  text-transform: capitalize;
+  background-color: $clr-black;
+
+  p {
+    color: $clr-gray;
+  }
+
+  a {
+    place-self: center;
+    width: fit-content;
+    height: fit-content;
+    font-size: clamp(size("small-size"), 2vw, size("big-size"));
     text-align: center;
-    text-transform: capitalize;
-    background-color: $clr-black;
+    padding-inline: clamp(2.5rem, 8vw, 4rem);
+    padding-block: clamp(0.5rem, 5vw, 1.1rem);
+    margin-bottom: 1rem;
+    border-radius: 6.25rem;
+    color: $clr-white;
+    border: 1px solid $clr-border-light;
 
-    p {
-        color: $clr-gray;
+    & > * {
+      pointer-events: none;
     }
-
-    a {
-        place-self: center;
-        width: fit-content;
-        height: fit-content;
-        font-size: clamp(size('small-size'), 2vw, size('big-size'));
-        text-align: center;
-        padding-inline: clamp(2.5rem, 8vw, 4rem);
-        padding-block: clamp(0.5rem, 5vw, 1.1rem);
-        margin-bottom: 1rem;
-        border-radius: 6.25rem;
-        color: $clr-white;
-        border: 1px solid $clr-border-light;
-
-        & > * {
-            pointer-events: none;
-        }
-    }
+  }
 }

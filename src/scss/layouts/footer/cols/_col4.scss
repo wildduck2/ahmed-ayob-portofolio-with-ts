@@ -2,16 +2,17 @@
 @use "../../../base" as *;
 
 .forth-col {
-  @include flex-center-between;
+  @include display(flex, center, space-between);
   flex-wrap: wrap;
   gap: clamp(0rem, 3vw, 1rem);
+  margin-bottom: 4rem;
 
   &.footer-Page {
     background-color: $clr-black;
   }
 
   .flex-footer {
-    @include flex-center-between;
+    @include display(flex, center, space-between);
     margin-top: 0.5rem;
     gap: clamp(0rem, 30vw, 6rem);
   }
@@ -38,27 +39,24 @@
     }
 
     div {
-      @include flex-center;
+      @include display(flex, center);
+
       gap: 2rem;
 
       svg {
-        width: clamp(
-          (size("gaint-size") - 0.5rem),
-          8vw,
-          (size("gaint-size") + 0.5rem)
-        );
-        height: clamp(
-          (size("gaint-size") - 0.5rem),
-          8vw,
-          (size("gaint-size") + 0.5rem)
-        );
+        width: clamp((size("gaint-size") - 0.5rem), 8vw, (size("gaint-size")));
+        height: clamp((size("gaint-size") - 0.5rem), 8vw, (size("gaint-size")));
         fill: $clr-white;
         pointer-events: none;
       }
     }
 
     h3 {
-      font-size: clamp((size("small-size") - 0.1rem), 4vw, size("titles-size"));
+      font-size: clamp(
+        (size("small-size") - 0.1rem),
+        4vw,
+        calc(size("titles-size") - 0.2rem)
+      );
       font-weight: weight("w-400");
       color: $clr-gray;
       margin-bottom: clamp(0.5rem, 4vw, 1.5rem);
@@ -66,7 +64,11 @@
 
     p {
       color: $clr-white;
-      font-size: clamp(size("paragrph-size"), 4vw, size("big-size"));
+      font-size: clamp(
+        size("paragrph-size"),
+        4vw,
+        calc(size("big-size") - 0.2rem)
+      );
       font-weight: weight("w-400");
     }
   }

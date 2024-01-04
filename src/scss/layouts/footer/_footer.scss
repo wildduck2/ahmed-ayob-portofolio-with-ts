@@ -7,22 +7,10 @@
   font-family: $Inter;
   overflow: hidden;
 
-  @include mq(mq6) {
-    margin-top: 3rem;
-    scale: 1.2;
-  }
-
   .footer-naviation {
     @include section;
     @include container;
     display: grid;
-    padding-bottom: clamp(1.5rem, 10vw, 4.5rem);
-    // @include mq(mq1) {
-    //   // gap: 1.5rem;
-    // }
-
-    // @include mq(mq4) {
-    //     gap: 1rem;
-    // }
+    padding-block: clamp(4.5rem, 10vw, 4.5rem);
   }
 }

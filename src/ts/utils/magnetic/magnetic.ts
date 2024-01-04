@@ -45,6 +45,20 @@ export const MagnaticObject = () => {
               +magnetsStrengthText!,
             ease: "elestic.out",
           });
+
+          if (Element.classList.contains("filter-button")) {
+            gsap.to(domElementText, 0.3, {
+              color: "#fff",
+              ease: "power1.inOut",
+            });
+          }
+
+          if (Element.querySelector(".lucide-filter")) {
+            gsap.to(".lucide-filter", 0.3, {
+              stroke: "#fff",
+              ease: "power1.inOut",
+            });
+          }
         }
       }
     });
@@ -64,7 +78,7 @@ export const MagnaticObject = () => {
             gsap.to(domElementFill, 0.6, {
               startAt: { y: "76%" },
               y: "0%",
-              ease: "power4.out",
+              ease: "power1.inOut",
             });
           }
         }
@@ -73,7 +87,7 @@ export const MagnaticObject = () => {
           if (window.innerWidth > 540) {
             gsap.to(".btn-c", 0.6, {
               color: "#fff",
-              ease: "power4.out",
+              ease: "power1.inOut",
             });
           }
         }
@@ -81,11 +95,13 @@ export const MagnaticObject = () => {
       return () => ctx2.revert();
     });
   });
+
   domElemetns.forEach((Element: HTMLElement) => {
     Element.addEventListener("mousemove", (event: MouseEvent) => {
       buttonMovement(Element, event);
     });
   });
+
   domElemetns.forEach((Element: HTMLElement) => {
     Element.addEventListener("mouseleave", () => {
       domElementText = Element.querySelector(".btn-text-m");
@@ -106,12 +122,32 @@ export const MagnaticObject = () => {
             y: 0,
             ease: "elastic.out",
           });
+
+          if (
+            !Element.classList.contains("active") &&
+            Element.classList.contains("filter-button")
+          ) {
+            gsap.to(domElementText, 0.3, {
+              color: "rgb(28, 29, 32)",
+              ease: "power1.inOut",
+            });
+          }
+
+          Element.parentElement?.querySelectorAll("button").forEach((item) => {
+            const icon = item.querySelector("svg");
+            if (!item.classList.contains("active")) {
+              gsap.to(icon, 0.3, {
+                stroke: "rgb(28, 29, 32)",
+                ease: "power1.inOut",
+              });
+            }
+          });
         }
 
         if (magnetButtonfill) {
           gsap.to(magnetButtonfill, 0.6, {
             y: "-76%",
-            ease: "power2.inout",
+            ease: "power1.inout",
           });
         }
 
@@ -119,7 +155,7 @@ export const MagnaticObject = () => {
           if (btnC) {
             gsap.to(btnC, 0.6, {
               color: "#1C1D20",
-              ease: "power4.out",
+              ease: "power1.out",
             });
           }
         }

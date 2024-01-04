@@ -2,10 +2,6 @@
 @use "../../../../scss/base" as *;
 
 .works-section {
-  font-family: $Inter;
-  @include mq(mq6) {
-    scale: 1.2;
-  }
   .works-section-container {
     position: relative;
     @include container;

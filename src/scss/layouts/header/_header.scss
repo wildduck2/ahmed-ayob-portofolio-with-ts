@@ -8,24 +8,15 @@ header {
   width: 100%;
   margin-bottom: -4rem;
   z-index: 2;
-  background-color: $clr-gray;
-  transition: background-color 2.1s;
-
-  @include mq(mq6) {
-    padding-block: 1rem 3rem;
-  }
 
   .header-container {
-    @include flex-center-between;
     @include container;
-    max-width: 1290px;
-    height: 3.5rem;
-
-    @include mq(mq3) {
-      padding-top: 3rem;
-    }
+    @include display(flex, center, space-between);
+    // max-width: 1400px;
+    height: 6rem;
   }
 }
+
 .white-header {
   background-color: $clr-white;
 

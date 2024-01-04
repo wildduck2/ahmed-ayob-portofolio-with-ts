@@ -3,35 +3,28 @@
 
 .second-col-works {
   .filters-wrapper {
-    @include flex-center-between;
+    @include display(flex, center, space-between);
     flex-wrap: wrap;
     gap: 1rem;
 
     & div {
-      @include flex-center;
+      @include display(flex, center);
       gap: clamp(0.5rem, 2.5vw, 1.5rem);
 
       .filter-button {
         position: relative;
-        @include grid-a-center;
+        @include display(grid, center);
+
         font-size: clamp(size("small-size"), 2.5vw, size("big-size"));
         font-weight: weight("w-300");
         padding-inline: clamp((0.9rem), 3vw, (2rem));
-        padding-block: 1rem;
+        padding-block: 1.5rem;
         border: 0.01rem solid $clr-border-dark;
         border-radius: 3.125rem;
         outline: none;
         background-color: $clr-white;
         cursor: pointer;
         overflow: hidden;
-
-        &:hover {
-          color: $clr-white;
-
-          svg {
-            fill: $clr-white;
-          }
-        }
 
         &.active {
           background-color: $clr-black;
@@ -43,25 +36,26 @@
 
           &:hover {
             svg {
-              fill: $clr-white;
+              stroke: $clr-white;
             }
           }
 
           svg {
-            fill: $clr-white;
+            stroke: $clr-white;
           }
         }
       }
 
       & .alpha {
-        padding: 0;
+        padding: 0.8rem;
 
         div {
-          @include flex-center-center;
+          @include display(flex, center, center);
+
           padding: 1rem;
 
           svg {
-            fill: $clr-black;
+            stroke: $clr-black;
           }
         }
       }
@@ -69,12 +63,12 @@
   }
 
   .projects-wrapper {
-    @include grid-a-center;
+    @include display(grid, center);
     padding-block: clamp(4rem, 3vw, 4rem);
 
     &.menu {
       & .propject-table-line {
-        @include flex-center-between;
+        @include display(flex, center, space-between);
       }
 
       & li {
@@ -117,7 +111,7 @@
 
           div {
             & > div {
-              @include flex-center-between;
+              @include display(flex, center, space-between);
 
               span {
                 width: min-content;
@@ -145,7 +139,7 @@
       }
 
       .projects-conatiner-animation {
-        @include grid-a-center;
+        @include display(grid, center);
         place-self: center;
         grid-template-columns: repeat(1, 1fr);
         gap: clamp(2rem, 1vw, 6rem);
@@ -158,7 +152,7 @@
         }
 
         li {
-          @include grid-a-center;
+          @include display(grid, center);
           position: relative;
           opacity: 1;
           border-radius: 8px;
@@ -173,7 +167,8 @@
           }
 
           & > div {
-            @include flex-end;
+            @include display(flex, flex-end);
+
             position: absolute;
             width: 100%;
             height: 100%;
@@ -196,7 +191,7 @@
               opacity: 0;
 
               &:first-child {
-                @include grid-a-center;
+                @include display(grid, center);
 
                 gap: 0.8rem;
                 width: 90%;
@@ -204,7 +199,8 @@
               }
 
               &:last-child {
-                @include flex-center-center;
+                @include display(flex, center, center);
+
                 display: grid;
 
                 gap: 0.5rem;

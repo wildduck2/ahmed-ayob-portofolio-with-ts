@@ -12,13 +12,16 @@
   }
 
   @include mq(mq3slider) {
-    height: max(63vh, 105vh);
+    // height: max(63vh, 105vh);
+    height: 103vh;
   }
 
   .slider-container {
     @include container;
     @include section;
-    @include grid-place-center;
+    @include display(grid);
+    place-content: center;
+    margin-block: 7rem 15rem;
 
     position: absolute;
     margin-block: 0;
@@ -26,9 +29,8 @@
     gap: 2.5rem;
 
     .slider {
-      @include flex-center-center;
+      @include display(flex, center, center);
       gap: clamp(1rem, 1vw, 2rem);
-      flex-shrink: 0;
 
       &:nth-child(1) {
         div {

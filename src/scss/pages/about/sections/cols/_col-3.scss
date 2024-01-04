@@ -2,7 +2,8 @@
 @use "../../../../../scss/base" as *;
 
 .third-col-about {
-  @include grid-place-center;
+  @include display(grid);
+  place-content: center;
   gap: 1rem;
 
   @include mq(mqyslider) {
@@ -11,12 +12,12 @@
   }
 
   @include mq(mq5) {
-    @include flex-center-between;
+    @include display(grid, center, center);
     padding-block: 0 7rem;
   }
 
   div {
-    @include grid-a-center;
+    @include display(grid, center);
 
     gap: 1.5rem;
 

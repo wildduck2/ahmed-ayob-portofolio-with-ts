@@ -1,59 +1,38 @@
-@mixin grid {
-  display: grid;
-  gap: 1.25rem;
+@use "./colors" as c;
+
+@mixin display(
+  $display: "flex",
+  $align-items: "initial",
+  $justify-content: "initial"
+) {
+  display: $display;
+  align-items: $align-items;
+  justify-content: $justify-content;
 }
 
-@mixin grid-a-center {
-  display: grid;
-  align-items: center;
+@mixin border {
+  -webkit-box-shadow: inset 0px 0px 0px 1px c.$clr-border-light;
+  box-shadow: inset 0px 0px 0px 1px c.$clr-border-light;
 }
 
-@mixin grid-a-end {
-  display: grid;
-  align-items: end;
-}
+@mixin magnaticButton {
+  font-size: 1rem;
+  font-weight: weight("w-400");
+  will-change: transform;
+  transform: translateZ(0) rotate(0.001deg);
+  text-align: center;
+  outline: none;
+  border: none;
+  background: none;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  overflow: hidden;
+  background: c.$clr-black;
+  color: c.$clr-white;
 
-@mixin grid-place-center {
-  display: grid;
-  place-content: center;
-}
-
-@mixin grid-a-start {
-  display: grid;
-  align-items: start;
-}
-
-@mixin flex-center-between {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-@mixin flex-start-between {
-  display: flex;
-  align-items: start;
-  justify-content: space-between;
-}
-
-@mixin flex-center-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-@mixin flex-center {
-  display: flex;
-  align-items: center;
-}
-
-@mixin flex-end {
-  display: flex;
-  align-items: end;
-}
-
-@mixin flex__center {
-  display: flex;
-  justify-content: center;
+  & > * {
+    pointer-events: none;
+  }
 }
 
 @mixin section {
@@ -69,7 +48,7 @@
 }
 
 @mixin container {
-  max-width: 1070px;
+  max-width: 1150px;
   margin-left: clamp(1rem, 4vw, 4.5rem);
   margin-right: clamp(1rem, 4vw, 4.5rem);
 

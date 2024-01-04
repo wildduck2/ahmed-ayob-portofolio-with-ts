@@ -7,6 +7,7 @@ import { AboutPage } from "./pages/aboutPage";
 import { WorksPage } from "./pages/worksPage";
 import { ContactPage } from "./pages/contactPage";
 import { FooterSection } from "./layouts";
+// import Swiper from "swiper";
 
 export const initScript = () => {
   Header();
@@ -18,5 +19,5 @@ export const initScript = () => {
   WorksPage();
   ContactPage();
 };
-BarbaJSRoutingAnimation();
+// BarbaJSRoutingAnimation();
 initScript();

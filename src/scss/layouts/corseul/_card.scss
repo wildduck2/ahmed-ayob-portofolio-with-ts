@@ -71,7 +71,7 @@
   }
 
   .card-info {
-    @include grid-a-center;
+    @include display(grid, center);
     margin-inline-start: 0.5rem;
     row-gap: 0.4rem;
     color: $clr-white;

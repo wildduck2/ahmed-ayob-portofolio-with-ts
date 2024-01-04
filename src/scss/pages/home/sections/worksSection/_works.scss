@@ -4,10 +4,6 @@
 .works-section {
   @include section;
 
-  @include mq(mq6) {
-    scale: 1.2;
-  }
-
   .works-container {
     position: relative;
     @include container;
@@ -37,9 +33,10 @@
 
       .works-btn {
         position: relative;
-        padding: 1rem 2.5rem;
+        padding-inline: 2.5rem;
         margin-top: 4rem;
-        border: 1px solid $clr-border-dark;
+        -webkit-box-shadow: inset 0px 0px 0px 2px rgba(28, 29, 32, 0.175);
+        box-shadow: inset 0px 0px 0px 2px rgba(28, 29, 32, 0.175);
         background-color: $clr-white;
 
         .btn-text {

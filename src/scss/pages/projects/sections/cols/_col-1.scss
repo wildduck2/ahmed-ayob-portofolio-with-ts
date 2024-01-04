@@ -7,7 +7,7 @@
     font-weight: weight("w-500");
     line-height: 1.5;
     text-transform: capitalize;
-    margin-block: clamp(3rem, 14vw, 18rem) clamp(3rem, 14vw, 6rem);
+    margin-block: clamp(3rem, 14vw, 6rem) clamp(3rem, 14vw, 6rem);
 
     br {
       display: none;

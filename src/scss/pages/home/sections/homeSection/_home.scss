@@ -5,6 +5,7 @@ section {
 }
 .hero-section {
   background-color: $clr-gray;
+
   .hero-container {
     position: relative;
 
@@ -25,11 +26,10 @@ section {
     }
 
     .hero-text {
-      @include grid-a-end;
+      @include display(grid, flex-end);
       @include container;
       position: absolute;
       grid-template-columns: 5fr 1fr;
-      max-width: 1290px;
       bottom: 19%;
       left: 0;
       right: 0;

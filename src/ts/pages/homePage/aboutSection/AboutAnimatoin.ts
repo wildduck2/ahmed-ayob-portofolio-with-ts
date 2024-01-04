@@ -16,8 +16,9 @@ export const AboutAnimation = () => {
   let tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".about-section",
-      start: "top 70%",
-      // toggleActions: 'restart none none reverse',
+      start: "0% 90%",
+      end: "100% 0%",
+      toggleActions: "play none none reset",
     },
 
     ease: "power1.out",
@@ -37,6 +38,7 @@ export const AboutAnimation = () => {
       },
     }
   );
+
   tl.fromTo(
     ".path",
     1,
@@ -47,6 +49,7 @@ export const AboutAnimation = () => {
       strokeDashoffset: 0,
     }
   );
+
   tl.fromTo(
     ".head",
     {
@@ -55,6 +58,7 @@ export const AboutAnimation = () => {
     { opacity: 1 },
     "<"
   );
+
   tl.fromTo(
     ".about-btn",
     1.2,

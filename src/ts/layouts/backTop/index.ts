@@ -1,7 +1,6 @@
-import { BackTop } from "./BackTop"
+import { BackTop } from "./BackTop";
 
 export const BackTopUI = () => {
-
-    // Back top 
-    BackTop()
-}
+  // Back top
+  BackTop();
+};

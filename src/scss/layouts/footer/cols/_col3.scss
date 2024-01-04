@@ -1,13 +1,13 @@
-@use '../../../utils' as *;
-@use '../../../base' as *;
+@use "../../../utils" as *;
+@use "../../../base" as *;
 
 .third-col {
-    @include flex-center;
-    flex-wrap: wrap;
-    gap: clamp(0rem, 4vw, 16.2rem);
-    margin-block: 2rem;
+  @include display(flex, center);
+  flex-wrap: wrap;
+  gap: clamp(0rem, 4vw, 2rem);
+  margin-block: 2rem 6rem;
 }
 
 .footer-btn-fix {
-    place-self: end;
+  place-self: end;
 }

@@ -1,18 +1,17 @@
-@use '../../../base' as *;
-@use '../../../utils' as *;
+@use "../../../base" as *;
+@use "../../../utils" as *;
 
 .btn-fill {
-    display: block;
-    background: $clr-orange;
-    position: absolute;
-    width: 150%;
-    height: 200%;
-    border-radius: 50%;
-    top: -50%;
-    left: -25%;
-    transform: translate3d(0, -76%, 0);
-    will-change: transform;
-    transition: background-color ease-in-out 0.25s;
-    z-index: -1;
-    pointer-events: none;
+  display: block;
+  background: $clr-orange;
+  position: absolute;
+  width: 150%;
+  height: 200%;
+  border-radius: 50%;
+  top: -50%;
+  left: -25%;
+  transform: translate3d(0, -76%, 0);
+  will-change: transform;
+  z-index: -1;
+  pointer-events: none;
 }

@@ -12,7 +12,6 @@
   transform: translate(calc(100% + 25vw), 0) rotate(0.001deg);
   transition: transform 0.8s cubic-bezier(0.7, 0, 0.2, 1);
   will-change: transform;
-  // overflow: hidden;
 
   @include mq(mq2) {
     width: 70%;
@@ -139,7 +138,7 @@
       }
 
       div {
-        @include flex-center;
+        @include display(flex, center);
         gap: 2rem;
 
         svg {

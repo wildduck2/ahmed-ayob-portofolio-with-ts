@@ -7,7 +7,7 @@
   margin-bottom: -14px;
 
   @include mq(mq4) {
-    @include flex-center-center;
+    @include display(flex, center, center);
   }
 
   li {
@@ -15,7 +15,8 @@
     justify-content: center;
 
     @include mq(mq4) {
-      @include grid-place-center;
+      @include display(grid);
+      place-content: center;
     }
 
     a {
@@ -36,12 +37,8 @@
         opacity: 0;
         scale: 0.5;
         transition: 0.3s ease-out;
-
-        @include mq(mq6) {
-          width: 11px;
-          height: 11px;
-        }
       }
+
       &:hover .dot {
         opacity: 1;
         scale: 1;
