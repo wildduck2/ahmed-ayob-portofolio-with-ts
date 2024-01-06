@@ -19,5 +19,5 @@ export const initScript = () => {
   WorksPage();
   ContactPage();
 };
-// BarbaJSRoutingAnimation();
+ BarbaJSRoutingAnimation();
 initScript();
