@@ -2,10 +2,10 @@
 @use "../../../utils" as *;
 
 .btn-text {
-  color: $clr-white;
+  color: var(--color-white);
 
   a {
-    color: $clr-white;
+    color: var(--color-white);
   }
 }
 
@@ -20,6 +20,7 @@
   @include magnaticButton;
   @include border;
   padding-inline: clamp(2.5rem, 8vw, 4rem);
-  padding-block: clamp(0.5rem, 5vw, 1.5rem);
+  padding-block: clamp(0.5rem, 5vw, 1.8rem);
   border-radius: 6.25rem;
+  
 }

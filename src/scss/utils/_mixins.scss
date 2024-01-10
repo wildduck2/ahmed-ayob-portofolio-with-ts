@@ -11,8 +11,8 @@
 }
 
 @mixin border {
-  -webkit-box-shadow: inset 0px 0px 0px 1px c.$clr-border-light;
-  box-shadow: inset 0px 0px 0px 1px c.$clr-border-light;
+  -webkit-box-shadow: inset 0px 0px 0px 1px var(--color-border);
+  box-shadow: inset 0px 0px 0px 1px var(--color-border);
 }
 
 @mixin magnaticButton {
@@ -35,9 +35,27 @@
   }
 }
 
+@mixin floatImage {
+  @each $index, $color in c.$arrOfColor {
+    &:nth-child(#{$index}) {
+      background-color: $color;
+    }
+  }
+
+  @each $index, $image in c.$arrOfImages {
+    &:nth-child(#{$index}) .overlay-image {
+      width: clamp(10em, 27.5vw, 24em);
+      height: 290px;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-image: url($image);
+    }
+  }
+}
+
 @mixin section {
-  padding-top: clamp(4.5rem, 10vw, 8.5rem);
-  padding-bottom: clamp(1.5rem, 10vw, 8.5rem);
+  padding-block: var(--section-padding);
 }
 
 @mixin letter-flex {
@@ -48,16 +66,12 @@
 }
 
 @mixin container {
-  max-width: 1150px;
-  margin-left: clamp(1rem, 4vw, 4.5rem);
-  margin-right: clamp(1rem, 4vw, 4.5rem);
+  max-width: 1290px;
+  padding-inline: calc(var(--container-padding) * 0.4);
+  margin-inline: auto;
 
-  @include mq(mq3) {
-    margin-inline: 2rem;
-  }
-
-  @include mq(mq5y) {
-    margin-inline: auto;
+  @include mq(mq6) {
+    padding-inline: 0;
   }
 }
 

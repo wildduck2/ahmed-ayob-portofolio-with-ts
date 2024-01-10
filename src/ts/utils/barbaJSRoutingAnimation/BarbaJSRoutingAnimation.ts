@@ -14,9 +14,7 @@ export const BarbaJSRoutingAnimation = () => {
     transitions: [
       {
         name: "default",
-        once(data) {
-          // do something once on the initial page load
-          // initScript();
+        once() {
           initLoader();
         },
         async leave({ current }) {
@@ -31,7 +29,6 @@ export const BarbaJSRoutingAnimation = () => {
           initNextWord(data);
         },
         async beforeEnter() {
-          // window.scrollTo( 0, 0 );
           ScrollTrigger.getAll().forEach((t) => t.kill());
           initScript();
         },
@@ -44,7 +41,6 @@ export const BarbaJSRoutingAnimation = () => {
         },
         once() {
           // do something once on the initial page load
-          // initScript();
           initLoaderHome();
         },
       },

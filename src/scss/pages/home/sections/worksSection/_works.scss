@@ -20,7 +20,7 @@
     }
 
     h2 {
-      font-weight: weight("w-500");
+      font-weight: weight("w-530");
       justify-self: center;
 
       @include mq(mq3) {
@@ -34,14 +34,12 @@
       .works-btn {
         position: relative;
         padding-inline: 2.5rem;
-        margin-top: 4rem;
-        -webkit-box-shadow: inset 0px 0px 0px 2px rgba(28, 29, 32, 0.175);
-        box-shadow: inset 0px 0px 0px 2px rgba(28, 29, 32, 0.175);
-        background-color: $clr-white;
+        margin-top: 5rem;
+        background-color: var(--color-white);
 
         .btn-text {
           display: flex;
-          color: $clr-black;
+          color: var(--color-dark);
 
           sup {
             font-size: 0.8rem;

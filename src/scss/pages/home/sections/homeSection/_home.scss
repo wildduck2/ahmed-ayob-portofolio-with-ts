@@ -1,10 +1,8 @@
 @use "../../../../base" as *;
 @use "../../../../utils" as *;
-section {
-  width: 100vw;
-}
+
 .hero-section {
-  background-color: $clr-gray;
+  background-color: var(--color-gray);
 
   .hero-container {
     position: relative;
@@ -30,10 +28,9 @@ section {
       @include container;
       position: absolute;
       grid-template-columns: 5fr 1fr;
-      bottom: 19%;
+      bottom: 16%;
       left: 0;
       right: 0;
-      margin-inline: 1rem;
       color: $clr-white;
 
       @include mq(mq5y) {
@@ -46,7 +43,6 @@ section {
           7vw,
           size("gaint-size") + 2rem
         );
-        font-weight: weight("w-400");
         margin-top: clamp(1.5rem, 4vw, 5rem);
 
         & > * {

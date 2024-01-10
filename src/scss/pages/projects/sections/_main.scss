@@ -2,6 +2,7 @@
 @use "../../../../scss/base" as *;
 
 .works-section {
+  padding-bottom: calc(var(--section-padding) / 2);
   .works-section-container {
     position: relative;
     @include container;

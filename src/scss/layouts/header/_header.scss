@@ -12,7 +12,6 @@ header {
   .header-container {
     @include container;
     @include display(flex, center, space-between);
-    // max-width: 1400px;
     height: 6rem;
   }
 }
@@ -43,11 +42,13 @@ header {
 
 .black-header {
   background-color: $clr-black;
+
   .header-container {
     .logo {
       p {
         color: $clr-white;
       }
+
       .mark-img {
         fill: $clr-white;
       }

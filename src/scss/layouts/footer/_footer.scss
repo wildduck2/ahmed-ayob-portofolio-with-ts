@@ -4,13 +4,12 @@
 .footer-seciton {
   position: relative;
   background-color: $clr-black;
-  font-family: $Inter;
   overflow: hidden;
 
   .footer-naviation {
     @include section;
     @include container;
     display: grid;
-    padding-block: clamp(4.5rem, 10vw, 4.5rem);
+    padding-block: clamp(4.5rem, 10vw, 5rem);
   }
 }

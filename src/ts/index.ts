@@ -7,17 +7,17 @@ import { AboutPage } from "./pages/aboutPage";
 import { WorksPage } from "./pages/worksPage";
 import { ContactPage } from "./pages/contactPage";
 import { FooterSection } from "./layouts";
-// import Swiper from "swiper";
 
 export const initScript = () => {
-  Header();
-  FooterSection();
-  HomePage();
-  MagnaticObject();
-  BackTopUI();
-  AboutPage();
-  WorksPage();
-  ContactPage();
+    Header();
+    FooterSection();
+    HomePage();
+    MagnaticObject();
+    BackTopUI();
+    AboutPage();
+    WorksPage();
+    ContactPage();
 };
+
 // BarbaJSRoutingAnimation();
 initScript();

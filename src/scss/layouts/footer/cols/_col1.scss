@@ -8,7 +8,7 @@
 
   .col-text {
     @include display(grid);
-    color: $clr-white;
+    color: var(--color-white);
     gap: clamp(0rem, 2vw, 1.25rem);
 
     .wrapper {
@@ -23,8 +23,7 @@
 
     h2 {
       position: relative;
-      font-size: clamp(size("gaint-size"), 12vw, size("gaint-size") + 3.5rem);
-      font-weight: weight("w-400");
+      font-size: clamp(size("gaint-size"), 12vw, size("gaint-size") + 4rem);
       overflow: hidden;
 
       &:nth-of-type(2) {

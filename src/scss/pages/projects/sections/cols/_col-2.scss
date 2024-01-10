@@ -1,34 +1,50 @@
 @use "../../../../../scss/utils" as *;
 @use "../../../../../scss/base" as *;
 
+@mixin count {
+  display: inline-block;
+  position: absolute;
+  margin-left: 0.25em;
+  opacity: 0.6;
+  font-size: 0.7em;
+  transform: translate(20%, -15%);
+  width: 0;
+  top: 0;
+  right: -0.2em;
+}
+
 .second-col-works {
   .filters-wrapper {
     @include display(flex, center, space-between);
     flex-wrap: wrap;
     gap: 1rem;
+    padding-bottom: calc(var(--section-padding) / 2);
 
     & div {
       @include display(flex, center);
       gap: clamp(0.5rem, 2.5vw, 1.5rem);
-
+      
       .filter-button {
-        position: relative;
         @include display(grid, center);
-
+        color: var(--color-dark);
+        background-color: var(--color-light);
         font-size: clamp(size("small-size"), 2.5vw, size("big-size"));
-        font-weight: weight("w-300");
-        padding-inline: clamp((0.9rem), 3vw, (2rem));
-        padding-block: 1.5rem;
-        border: 0.01rem solid $clr-border-dark;
-        border-radius: 3.125rem;
-        outline: none;
-        background-color: $clr-white;
-        cursor: pointer;
-        overflow: hidden;
+        padding-inline: clamp(0.9rem, 3vw, 3rem);
+        padding-block: 1.78rem;
+      
+
+        .btn-text-m {
+          position: relative;
+
+
+          .count {
+            @include count;
+          }
+        }
 
         &.active {
-          background-color: $clr-black;
-          color: $clr-white;
+          background-color: var(--color-dark);
+          color: var(--color-white);
 
           .btn-fill {
             display: none;
@@ -36,26 +52,26 @@
 
           &:hover {
             svg {
-              stroke: $clr-white;
+              stroke: var(--color-white);
             }
           }
 
           svg {
-            stroke: $clr-white;
+            stroke: var(--color-white);
           }
         }
       }
 
       & .alpha {
-        padding: 0.8rem;
+        padding: 0.87rem;
 
         div {
           @include display(flex, center, center);
 
-          padding: 1rem;
+          padding: 0.792em;
 
           svg {
-            stroke: $clr-black;
+            stroke: var(--color-dark);
           }
         }
       }
@@ -64,59 +80,133 @@
 
   .projects-wrapper {
     @include display(grid, center);
-    padding-block: clamp(4rem, 3vw, 4rem);
 
     &.menu {
       & .propject-table-line {
-        @include display(flex, center, space-between);
-      }
-
-      & li {
-        font-family: $Poppins;
-        padding: clamp(2rem, 2.5vw, 3.5rem);
+        @include display(flex, center);
+        margin-bottom: 2.275rem;
         font-weight: weight("w-400");
         text-transform: capitalize;
         cursor: pointer;
         text-align: center;
-        color: $clr-black-dark;
-        color: $clr-orange;
-        font-size: clamp(
-          size("medium-size") + 0.2rem,
-          4.5vw,
-          size("big-size") + 0.2rem
-        );
+        color: var(--color-gray);
+
+        h5 {
+          font-size: 0.8em;
+          text-align: start;
+
+          &:nth-child(1) {
+            width: 40%;
+          }
+
+          &:nth-child(2) {
+            width: 20%;
+          }
+
+          &:nth-child(3) {
+            width: 22%;
+          }
+
+          &:nth-child(4) {
+            width: 14%;
+            padding-top: 0.25em;
+            text-align: right;
+          }
+        }
       }
 
-      .seperator {
-        width: 100%;
-        height: 1px;
-        background-color: $clr-black;
-        will-change: transform;
-      }
-      .projects-conatiner-animation {
-        .propject {
-          font-family: $Inter;
+      .float-project-container {
+        .project {
+          .stripe {
+            display: block;
+            width: 123%;
+            max-width: 1500px;
+            height: 1px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-inline: auto;
+            background-color: rgba(28, 29, 32, 0.175);
+          }
 
-          font-size: clamp(
-            size("medium-size") + 0.2rem,
-            4.5vw,
-            size("big-size") + 0.2rem
-          );
-          font-weight: weight("w-400");
-          color: $clr-black;
+          .row {
+            @include display(flex, center);
+            padding-block: 2em;
+
+            .flex-col > p,
+            h4 {
+              font-size: clamp(
+                size("medium-size") + 0.2rem,
+                4.5vw,
+                size("big-size") - 0.2rem
+              );
+              font-weight: weight("w-450");
+              color: var(--color-dark);
+              margin-bottom: 0;
+              transform: translateX(0) rotate(0.001deg);
+              transition: var(--animation-fast);
+            }
+
+            h4 {
+              font-size: clamp(
+                size("medium-size") + 0.2rem,
+                4.5vw,
+                size("big-size") + 1.5rem
+              );
+
+              font-weight: weight("w-450");
+
+              & span {
+                position: relative;
+                display: block;
+                padding: 0.1em 0;
+              }
+            }
+
+            & .flex-col {
+              transition: var(--animation-fast);
+
+              &:nth-child(1) {
+                width: 40%;
+              }
+
+              &:nth-child(2) {
+                width: 20%;
+              }
+
+              &:nth-child(3) {
+                width: 22%;
+              }
+
+              &:nth-child(4) {
+                width: 14%;
+                padding-top: 0.25em;
+                text-align: right;
+              }
+            }
+
+            &:hover .flex-col {
+              h4,
+              p {
+                color: var(--color-gray);
+              }
+
+              &:nth-child(1) {
+                transform: translateX(calc(var(--container-padding) * -0.1))
+                  rotate(0.001deg);
+              }
+
+              &:nth-child(2),
+              &:nth-child(3),
+              &:nth-child(4) {
+                transform: translateX(calc(var(--container-padding) * 0.1))
+                  rotate(0.001deg);
+              }
+            }
+          }
 
           svg {
             display: none;
-          }
-
-          div {
-            & > div {
-              @include display(flex, center, space-between);
-
-              span {
-                width: min-content;
-              }
-            }
           }
 
           .card__img-filtered {
@@ -143,104 +233,241 @@
         place-self: center;
         grid-template-columns: repeat(1, 1fr);
         gap: clamp(2rem, 1vw, 6rem);
-
-        @include mq(mq3) {
-          grid-template-columns: repeat(2, 1fr);
-        }
-        @include mq(mq4) {
-          grid-template-columns: repeat(3, 1fr);
-        }
-
-        li {
-          @include display(grid, center);
-          position: relative;
-          opacity: 1;
-          border-radius: 8px;
-          padding-inline: clamp(1rem, 1vw, 3rem);
-          padding-block: clamp(2rem, 1vw, 3rem);
-          background-color: $clr-black;
-          box-shadow: 0 7px 18px rgba(0, 0, 0, 0.218);
-          overflow: hidden;
-
-          & > * {
-            pointer-events: none;
-          }
-
-          & > div {
-            @include display(flex, flex-end);
-
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            padding-inline: 2rem;
-            padding-bottom: 2.5rem;
-            gap: clamp(0.5rem, 4vw, 1rem);
-            font-size: 1.2rem;
-            text-transform: capitalize;
-            font-weight: weight("w-600");
-            backdrop-filter: blur(2px);
-            color: $clr-white;
-            border-radius: 8px;
-            opacity: 0;
-            clip-path: circle(50px at 10% 10%);
-            transition: all 0.3s ease-out;
-
-            div {
-              margin-bottom: -2rem;
-              transition: all 0.3s ease-out;
-              opacity: 0;
-
-              &:first-child {
-                @include display(grid, center);
-
-                gap: 0.8rem;
-                width: 90%;
-                align-content: end;
-              }
-
-              &:last-child {
-                @include display(flex, center, center);
-
-                display: grid;
-
-                gap: 0.5rem;
-                align-content: end;
-
-                svg {
-                  cursor: pointer;
-                  width: 30px;
-                  height: 30px;
-                  border-radius: 2rem;
-                  transition: all 0.3s ease-out;
-
-                  &:hover {
-                    background-color: $clr-white;
-                    fill: $clr-black;
-                  }
-                }
-              }
-            }
-          }
-
-          .card__img-filtered {
-            display: block;
-            border-radius: 9px;
-          }
-
-          &:hover {
-            & > div {
-              opacity: 1;
-              background-color: rgba(0, 0, 0, 0.25);
-              clip-path: circle(150% at 0 0);
-              div {
-                margin-bottom: 0rem;
-                opacity: 1;
-                transition: all 0.3s ease-out 0.2s;
-              }
-            }
-          }
-        }
       }
     }
+  }
+
+  .archive {
+    padding-top: calc(var(--section-padding) / 2);
+
+    @include display(flex, center, center);
+
+    &>a.magnetic{
+      @include display(flex, center);
+      box-shadow: none;
+      background-color: var(--color-dark);
+      
+      
+      .btn-text-m {
+        color: var(--color-white);
+        position: relative;
+
+        .count {
+          @include count;
+        }
+      }
+      
+    }
+  }
+}
+
+/* ------------------------- Mouse Position Image -------------------------------------------------- */
+
+.mouse-pos-list-image {
+  width: 0;
+  height: 0;
+  z-index: 25;
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -52%);
+  display: block;
+  left: 55%;
+  overflow: hidden;
+  transform-origin: center center;
+  transition: all 0.4s cubic-bezier(0.36, 0, 0.66, 0);
+  left: 0%;
+  will-change: transform, width, height;
+
+  &.active {
+    width: clamp(10em, 27.5vw, 28em);
+    height: 450px;
+    border-radius: 0;
+    transition: all 0.4s cubic-bezier(0.34, 1, 0.64, 1);
+  }
+
+  .mouse-pos-list-image-bounce {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transform: scale(0) rotate(0.001deg);
+    transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+    will-change: transform;
+
+    &.active {
+      transform: scale(1) rotate(0.001deg);
+      transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+    }
+  }
+
+  .float-image-item {
+    @include floatImage;
+    @include display(grid);
+    place-content: center;
+    width: 100%;
+    height: 450px;
+
+    .overlay-image {
+      margin-inline: auto;
+      padding-block: 50%;
+    }
+  }
+}
+
+.mouse-pos-list-btn,
+.mouse-pos-list-span {
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  border: 0;
+  background: #455ce9;
+  position: fixed;
+  z-index: 26;
+  pointer-events: none;
+  transform: translate(-50%, -60%);
+  overflow: hidden;
+  display: block;
+  transition:
+    width 0.4s cubic-bezier(0.36, 0, 0.66, 0),
+    height 0.4s cubic-bezier(0.36, 0, 0.66, 0);
+  left: 50.5%;
+  top: -10%;
+  left: -10%;
+  left: 0%;
+  top: 0%;
+  will-change: transform, width, height;
+  pointer-events: none;
+}
+
+.mouse-pos-list-span {
+  background: transparent;
+  color: $clr-white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 49.75%;
+  top: -11.25%;
+  left: -11.25%;
+  left: 0%;
+  top: 0%;
+}
+
+.mouse-pos-list-span p {
+  margin: 0;
+}
+
+.mouse-pos-list-span .arrow,
+.btn .arrow {
+  width: 0em;
+  transform: rotate(-90deg) translateX(-0.05em);
+  margin-left: 0.33em;
+  display: inline-flex;
+  position: relative;
+  transition: width 0.4s cubic-bezier(0.36, 0, 0.66, 0);
+  will-change: width;
+}
+
+.mouse-pos-list-span.active-big .arrow,
+.btn .arrow {
+  width: 0.66em;
+  transition: width 0.4s cubic-bezier(0.34, 1, 0.64, 1);
+}
+
+.mouse-pos-list-btn.active,
+.mouse-pos-list-span.active {
+  width: clamp(3.75em, 5.5vw, 5em);
+  height: clamp(3.75em, 5.5vw, 5em);
+  transition:
+    width 0.4s cubic-bezier(0.34, 1, 0.64, 1),
+    height 0.4s cubic-bezier(0.34, 1, 0.64, 1);
+}
+
+.mouse-pos-list-btn.active-big,
+.mouse-pos-list-span.active-big {
+  width: calc(clamp(3.75em, 5.5vw, 5em) * 1.66);
+  height: calc(clamp(3.75em, 5.5vw, 5em) * 1.66);
+  transition:
+    width 0.4s cubic-bezier(0.34, 1, 0.64, 1),
+    height 0.4s cubic-bezier(0.34, 1, 0.64, 1);
+}
+
+.mouse-pos-list-btn.active-big.hover,
+.mouse-pos-list-span.active-big.hover {
+  width: calc(clamp(3.75em, 5.5vw, 5em) * 1.45);
+  height: calc(clamp(3.75em, 5.5vw, 5em) * 1.45);
+}
+
+.mouse-pos-list-btn.active.pressed,
+.mouse-pos-list-span.active.pressed {
+  height: calc(clamp(3.75em, 5.5vw, 8em) * 1.4);
+  width: calc(clamp(3.75em, 5.5vw, 8em) * 1.4);
+}
+
+.mouse-pos-list-btn.active-big.pressed,
+.mouse-pos-list-span.active-big.pressed {
+  height: calc(clamp(3.75em, 5.5vw, 8em) * 2);
+  width: calc(clamp(3.75em, 5.5vw, 8em) * 2);
+}
+
+.mouse-pos-list-span.active,
+.mouse-pos-list-span.active-big {
+  border-radius: 0;
+  width: clamp(10em, 27.5vw, 25em);
+  transition:
+    width 0.4s cubic-bezier(0.34, 1, 0.64, 1),
+    height 0.4s cubic-bezier(0.34, 1, 0.64, 1);
+}
+
+.mouse-pos-list-span p {
+  font-size: 0em;
+  transition: font-size 0.4s cubic-bezier(0.36, 0, 0.66, 0);
+  will-change: font-size;
+}
+
+.mouse-pos-list-span.active p,
+.mouse-pos-list-span.active-big p {
+  font-size: 1em;
+  transition: font-size 0.4s cubic-bezier(0.34, 1, 0.64, 1);
+}
+
+.load-icon {
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  border: 0;
+  background: var(--color-blue);
+  position: fixed;
+  pointer-events: none;
+  transform: scale(0);
+  overflow: hidden;
+  display: block;
+  right: var(--gap-padding);
+  bottom: var(--gap-padding);
+  z-index: 2000;
+}
+
+.load-icon svg {
+  left: 25%;
+  top: 25%;
+  position: absolute;
+  width: 50%;
+  transform: rotate(0.0001deg);
+  animation: rotateLoad 1s linear infinite;
+}
+
+@keyframes rotateLoad {
+  0% {
+    transform: rotate(0.0001deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .mouse-pos-list-btn,
+  .mouse-pos-list-span {
+    display: none;
   }
 }

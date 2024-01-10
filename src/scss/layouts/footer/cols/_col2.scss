@@ -5,11 +5,16 @@
   position: relative;
   @include display(grid, center);
 
-  .footer-btn {
+  .footer-btn-wrapper {
     display: grid;
     place-content: center;
     place-self: end;
-    background-color: $clr-orange-dark;
+  }
+
+  .footer-btn {
+    display: grid;
+    place-content: center;
+    background-color: var(--color-blue-dark);
     margin-right: 6rem;
   }
 
@@ -23,7 +28,7 @@
     width: 100%;
     height: max(2px);
     border-radius: 1rem;
-    background-color: $clr-border-light;
+    background-color: var(--color-border-light);
   }
 
   .footer-arrow {

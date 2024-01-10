@@ -42,11 +42,11 @@
   }
 
   @include mq(mq3) {
-    grid-auto-columns: calc(30.8% - 3px);
+    grid-auto-columns: calc(31.45% - 3px);
     gap: 2.85rem;
     padding-left: 0;
-    height: 500px;
-    max-width: 1091px;
+    height: 600px;
+    max-width: 1290px;
   }
 
   .card-wrapper {

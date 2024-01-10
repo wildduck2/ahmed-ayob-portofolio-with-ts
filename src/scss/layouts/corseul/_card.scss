@@ -7,7 +7,6 @@
   scroll-snap-align: center;
   width: 240px;
   padding: 0.7rem 0.7rem 0.8rem;
-  margin-bottom: 1rem;
   border-radius: 9px;
   transition: all 0.4s ease-in-out;
   background-color: $clr-black;
@@ -42,16 +41,17 @@
   }
 
   @include mq(mq4) {
-    width: 333px;
+    width: 391px;
   }
 
   @include mq(mq5) {
-    height: 360px;
+    height: 400px;
+    
   }
 
   .card-img {
     position: relative;
-    height: 126.67px;
+    height: 205px;
     margin-bottom: 0.5rem;
 
     img {
@@ -60,13 +60,13 @@
       border-radius: 9px;
       z-index: 10;
 
-      @include mq(mq1) {
-        height: 130%;
-      }
+      // @include mq(mq1) {
+      //   height: 130%;
+      // }
 
-      @include mq(mq5) {
-        height: 150%;
-      }
+      // @include mq(mq5) {
+      //   height: 150%;
+      // }
     }
   }
 
