@@ -18,6 +18,10 @@ export const initScript = () => {
     WorksPage();
     ContactPage();
 };
+<<<<<<< HEAD
 
 // BarbaJSRoutingAnimation();
+=======
+ BarbaJSRoutingAnimation();
+>>>>>>> 6e0b3c9ce84580d5d7a36f4f24cfb6be0a9a44c7
 initScript();
