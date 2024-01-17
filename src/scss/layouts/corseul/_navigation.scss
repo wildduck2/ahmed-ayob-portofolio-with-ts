@@ -6,35 +6,35 @@
   gap: 1rem;
   position: absolute;
   height: 50px;
-  bottom: 6rem;
+  bottom: 4rem;
   left: 0;
   right: 0;
   margin: 0 auto;
   background-color: $clr-white;
 
-  @include mq(mq1) {
-    bottom: 7em;
+  @include mq(mq3) {
+    bottom: 6em;
     gap: 1.5rem;
   }
 
-  @include mq(mq4) {
-    bottom: 8rem;
-    gap: 1.5rem;
-  }
+  // @include mq(mq4) {
+  //   bottom: 8rem;
+  //   gap: 1.5rem;
+  // }
 
-  @include mq(mq4) {
-    bottom: 6rem;
-    gap: 1.5rem;
-    height: 100px;
-  }
+  // @include mq(mq4) {
+  //   bottom: 6rem;
+  //   gap: 1.5rem;
+  //   height: 100px;
+  // }
 
-  @include mq(mq5) {
-    gap: 2rem;
-  }
+  // @include mq(mq5) {
+  //   gap: 2rem;
+  // }
 
-  @include mq(mq6) {
-    bottom: 6rem;
-  }
+  // @include mq(mq6) {
+  //   bottom: 6rem;
+  // }
 
   .nav-left,
   .nav-right {

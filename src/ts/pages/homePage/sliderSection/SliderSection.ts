@@ -16,10 +16,10 @@ export const SliderAnimation = () => {
 
   gsap.context(() => {
     if (window.innerWidth > 1500) {
-      tl.to(".sliderone", { x: "2%", rotation: 0.01 });
+      tl.to(".sliderone", { x: "10%", rotation: 0.01 });
       tl.to(".slidertwo", { x: "-2%", rotation: 0.01 }, "<");
     } else {
-      tl.to(".sliderone", { x: "-17%", rotation: 0.01 });
+      tl.to(".sliderone", { x: "-19%", rotation: 0.01 });
       tl.to(".slidertwo", { x: "15%", rotation: 0.01 }, "<");
     }
   });

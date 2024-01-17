@@ -4,10 +4,6 @@
 .contact-hero-section {
   background-color: $clr-black;
 
-  @include mq(mq6) {
-    scale: 1.2;
-  }
-
   .contact-hero-container {
     position: relative;
     @include section;

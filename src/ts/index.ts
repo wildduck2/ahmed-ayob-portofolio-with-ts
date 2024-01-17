@@ -9,15 +9,16 @@ import { ContactPage } from "./pages/contactPage";
 import { FooterSection } from "./layouts";
 
 export const initScript = () => {
-    Header();
-    FooterSection();
-    HomePage();
-    MagnaticObject();
-    BackTopUI();
-    AboutPage();
-    WorksPage();
-    ContactPage();
+  Header();
+  FooterSection();
+  HomePage();
+  MagnaticObject();
+  BackTopUI();
+  AboutPage();
+  WorksPage();
+  ContactPage();
 };
 
 // BarbaJSRoutingAnimation();
 initScript();
+

@@ -15,7 +15,7 @@
     display: grid;
     place-content: center;
     background-color: var(--color-blue-dark);
-    margin-right: 6rem;
+    margin-right: clamp(1rem, -0.38613861386138626rem + 7.920792079207921vw, 6rem);
   }
 
   svg {

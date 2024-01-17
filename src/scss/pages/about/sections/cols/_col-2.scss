@@ -3,6 +3,11 @@
 
 .second-col-about {
   @include display(grid, center);
+  position: relative;
+
+  & > * {
+    position: relative;
+  }
 
   span {
     color: $clr-orange;
@@ -10,10 +15,9 @@
 
   .arrow-wrapper {
     .about-arrow {
-      width: clamp(30px, 4vw, 50px);
-      height: clamp(30px, 4vw, 50px);
+      width: clamp(30px, 4vw, 30px);
+      height: clamp(30px, 4vw, 30px);
       justify-self: start;
-      transform: translateY(-8vh);
 
       path {
         stroke: $clr-black;
@@ -38,17 +42,20 @@
     @include mq(mq3) {
       @include display(flex, flex-start, space-between);
       img {
-        width: clamp(45%, 4vw, 55%);
+        width: 50%;
+        height: 860px;
+        object-fit: cover;
+        object-position: top;
+        position: relative;
       }
     }
 
     div {
       position: relative;
-      margin-top: -3rem;
       @include mq(mq3) {
         @include display(grid, center);
         gap: 1rem;
-        max-width: 500px;
+        max-width: 480px;
       }
     }
 

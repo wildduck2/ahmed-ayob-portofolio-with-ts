@@ -4,28 +4,30 @@
 .works-section {
   @include section;
 
+
+
   .works-container {
     position: relative;
     @include container;
     display: grid;
 
-    @include mq(mq2) {
-      margin-left: 2.5rem;
-      margin-right: 2.5rem;
-    }
-
-    @include mq(mq5) {
-      margin-left: auto;
-      margin-right: auto;
-    }
 
     h2 {
       font-weight: weight("w-530");
       justify-self: center;
+      margin-bottom: 1rem;
 
-      @include mq(mq3) {
-        font-size: clamp(size("big-size") + 0.2rem, 4vw, size("gaint-size"));
+      div {
+        font-size: clamp(
+          calc(size("gaint-size") - 0.5rem),
+          6.5vw,
+          size("gaint-size") + 0.5rem
+        );
       }
+
+      // @include mq(mq3) {
+      //   font-size: clamp(size("big-size") + 0.2rem, 4vw, size("gaint-size"));
+      // }
     }
 
     .works-button-wrapper {

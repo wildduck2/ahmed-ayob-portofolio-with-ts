@@ -30,7 +30,28 @@
         ></path>
       </svg>
     </div>
-
+    <div class="mouse-pos-list-image">
+      <div class="mouse-pos-list-image-bounce">
+        <div class="float-image-wrap">
+          <li class="float-image-item">
+            <div class="overlay-image"></div>
+          </li>
+          <li class="float-image-item">
+            <div class="overlay-image"></div>
+          </li>
+          <li class="float-image-item">
+            <div class="overlay-image"></div>
+          </li>
+          <li class="float-image-item">
+            <div class="overlay-image"></div>
+          </li>
+        </div>
+      </div>
+    </div>
+    <div class="mouse-pos-list-btn no-select"></div>
+    <div class="mouse-pos-list-span no-select">
+      <p>View</p>
+    </div>
     <div class="loading-wrapper">
       <div class="loading-screen">
         <div class="rounded-div-wrap top">
@@ -357,8 +378,7 @@
           <div class="about-hero-container">
             <div class="first-col-about">
               <h1 class="main-title once-in">
-                Mergin Design, Code and Ego to Shape Extraodinary Web
-                Experiences
+                Where Code, Design, and Passion Collide
               </h1>
               <div class="shape-ball-and-line once-in">
                 <div class="linee"></div>
@@ -377,59 +397,42 @@
               </div>
             </div>
             <div class="second-col-about once-in">
-              <div class="arrow-wrapper">
-                <svg
-                  class="about-arrow arrow-solid"
-                  width="23"
-                  height="23"
-                  viewBox="0 0 23 23"
-                  fill="none"
-                >
-                  <path
-                    d="M20.9344 6.0697V20.9344H6.06979"
-                    stroke="white"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                  ></path>
-                  <path
-                    d="M20.9344 20.9344L1.61039 1.61035"
-                    stroke="white"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                  ></path>
-                </svg>
-              </div>
               <div class="col-header">
-                <div>
-                  <p class="col-pargraph anime">
-                    Ahoy from the digital realm! I'm <span>Ahmed Ayob</span>,
-                    aka <span>"TheVimagen"</span>.
-                  </p>
-                  <p class="col-pargraph anime">
-                    a front-end sorcerer fluent in TypeScript, React, Redux,
-                    GSAP, Sass, Tailwind CSS, and Barba.js. I dance with
-                    TypeScript's static typing, sculpting precision in
-                    development, while React and Redux craft seamless and
-                    dynamic interfaces.
-                  </p>
-                  <p class="col-pargraph anime">
-                    In the realm of motion sorcery, GSAP takes center stage,
-                    adding sophistication to my creations with captivating
-                    animations. Sass and Tailwind CSS ensure visual aesthetics
-                    reign supreme, creating a visually stunning user experience.
-                    Barba.js orchestrates seamless page transitions, ensuring an
-                    uninterrupted user odyssey through the digital saga.
-                  </p>
-                  <p class="col-pargraph anime">
-                    But the magic doesn't stop at the front end; I wield
-                    Supabase to conjure powerful full-stack applications. Tech
-                    prowess is my way of life, and together, let's embark on a
-                    nerdy odyssey, pushing the boundaries of web development.
-                    Join me, and let's code a digital masterpiece that stands as
-                    a testament to the fusion of nerdy brilliance and
-                    professional finesse. The journey awaits, fellow code
-                    connoisseur!
-                  </p>
+                <div class="col-wrapper">
+                  <div class="col-text">
+                    <div class="arrow-wrapper">
+                      <svg
+                        class="about-arrow arrow-solid"
+                        width="23"
+                        height="23"
+                        viewBox="0 0 23 23"
+                        fill="none"
+                      >
+                        <path
+                          d="M20.9344 6.0697V20.9344H6.06979"
+                          stroke="white"
+                          stroke-width="2.5"
+                          stroke-linecap="round"
+                        ></path>
+                        <path
+                          d="M20.9344 20.9344L1.61039 1.61035"
+                          stroke="white"
+                          stroke-width="2.5"
+                          stroke-linecap="round"
+                        ></path>
+                      </svg>
+                    </div>
+                    <p class="col-pargraph anime">
+                      Ahoy from the digital realm! I'm <span>Ahmed Ayob</span>,
+                      aka '<span>TheVimagen</span>'. As a front-end sorcerer, I
+                      dance with precision in development, crafting seamless and
+                      dynamic interfaces. My magic extends beyond the front end,
+                      where I conjure powerful full-stack applications. Let's
+                      embark on a nerdy odyssey, pushing the boundaries of web
+                      development together. The journey awaits, fellow code
+                      connoisseur!
+                    </p>
+                  </div>
                 </div>
                 <img
                   loading="lazy"
@@ -437,23 +440,62 @@
                   alt="about__img"
                   class="aobut-img anime-img"
                 />
-                <div class="animation-shape-img"></div>
               </div>
             </div>
             <div class="third-col-about">
-              <div>
-                <h2 class="col-title">What i can help you with...</h2>
-                <p class="col-pargraph">
-                  Seamlessly Fusing Responsiveness, Technical Prowess, and
-                  Unparalleled Artistry for a dDigital Showvase that Transcends
-                  Boundries.
-                </p>
-              </div>
-              <img
-                loading="lazy"
-                src="/src/assets/svg/drawingSvgs/business-lady-do-multi-tasking 1.svg"
-                alt="paint__svg"
-              />
+              <h2>I can help you with ...</h2>
+              <ul>
+                <li>
+                  <span>01</span>
+                  <h3>Design</h3>
+                  <p>
+                    With a solid track record in designing websites and apps, I
+                    deliver strong and user-friendly digital designs. Solid
+                    company branding is the foundation of any succesful website.
+                  </p>
+                </li>
+                <li>
+                  <span>02</span>
+                  <h3>Development</h3>
+                  <p>
+                    I build scalable websites from scratch that fit seamlessly
+                    with design. My focus is on micro animations, transitions
+                    and interaction.
+                    <!-- For content management I use Kirby CMS. -->
+                  </p>
+                </li>
+                <li>
+                  <span>03</span>
+                  <h3>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-sparkles"
+                    >
+                      <path
+                        d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"
+                      />
+                      <path d="M5 3v4" />
+                      <path d="M19 17v4" />
+                      <path d="M3 5h4" />
+                      <path d="M17 19h4" />
+                    </svg>
+                    The full package
+                  </h3>
+                  <p>
+                    A complete website from concept to implementation, that's
+                    what makes me stand out. My great sense for design and my
+                    development skills enable me to create kick-ass projects.
+                  </p>
+                </li>
+              </ul>
             </div>
           </div>
         </section>
@@ -524,33 +566,45 @@
                 </clipPath>
               </defs>
             </svg>
-            <a
-              class="footer-btn btn-radius magnetic"
-              href="./contact.html"
-              data-strength="100"
-              data-strength-text="50"
-            >
-              <div class="btn-fill"></div>
-              <div class="btn-text btn-text-m">Get In Touch</div>
-            </a>
+
+            <div class="footer-btn-wrapper">
+              <a
+                class="footer-btn btn-radius magnetic"
+                href="./contact.html"
+                data-strength="100"
+                data-strength-text="50"
+              >
+                <div class="btn-fill"></div>
+                <div class="btn-text btn-text-m">Get In Touch</div>
+              </a>
+            </div>
           </div>
 
           <div class="third-col">
-            <a
-              class="btn-solid-horizon contact-btn magnetic"
-              data-strength="25"
-              data-strength-text="15"
-              href="./contact.html"
-              ><div class="btn-fill"></div>
-              <div class="btn-text btn-text-m">wezonaser50@gmail.com</div></a
-            ><a
-              class="btn-solid-horizon contact-btn magnetic"
-              data-strength="25"
-              data-strength-text="15"
-              href="./contact.html"
-              ><div class="btn-fill"></div>
-              <div class="btn-text btn-text-m">+201027689409</div></a
-            >
+            <div class="footer-btn-wrapper-contact">
+              <a
+                class="btn-solid-horizon contact-btn magnetic"
+                data-strength="25"
+                data-strength-text="15"
+                href="./contact.html"
+              >
+                <div class="btn-fill"></div>
+                <div class="btn-text btn-text-m">
+                  ahmedayobbusiness@gmail.com
+                </div>
+              </a>
+            </div>
+            <div class="footer-btn-wrapper-contact">
+              <a
+                class="btn-solid-horizon contact-btn magnetic"
+                data-strength="25"
+                data-strength-text="15"
+                href="./contact.html"
+              >
+                <div class="btn-fill"></div>
+                <div class="btn-text btn-text-m">+201027689409</div>
+              </a>
+            </div>
           </div>
 
           <div class="forth-col footer-col">

@@ -3,12 +3,8 @@
 
 .first-col-works {
   .main-title {
-    font-size: 7rem;
-    font-weight: weight("w-450");
-    text-transform: capitalize;
-    line-height: 1.065;
-    margin-block: clamp(3rem, 14vw, 6rem) clamp(3rem, 14vw, 4rem);
-
+    @include sectionTitle;
+    
     br {
       display: none;
 

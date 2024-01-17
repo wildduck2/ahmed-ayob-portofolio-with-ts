@@ -2,21 +2,19 @@
 @use '../../../../scss/base' as *;
 
 .about-hero-section {
-    @include mq(mq6) {
-        scale: 1.2;
-    }
 
     .about-hero-container {
         position: relative;
         @include section;
         @include container;
         display: grid;
-        gap: 2rem;
+        gap: 4rem;
+        padding-bottom: 2rem;
 
-        .first-col,
-        .second-col,
-        .third-col {
-            padding-block: 2rem;
-        }
+        // .first-col,
+        // .second-col,
+        // .third-col {
+        //     // padding-block: 2rem;
+        // }
     }
 }

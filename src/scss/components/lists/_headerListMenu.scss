@@ -18,7 +18,7 @@
   }
 
   @include mq(mq4) {
-    width: 40%;
+    width: 35%;
   }
 
   &.active {
@@ -63,7 +63,7 @@
 
     .small-title {
       font-size: size("small-size");
-      font-weight: weight("w-400");
+      font-weight: weight("w-450");
       color: $clr-gray;
       margin-bottom: 0.5rem;
 

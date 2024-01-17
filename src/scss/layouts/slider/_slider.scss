@@ -12,9 +12,9 @@
   }
 
   @include mq(mq3slider) {
-    // height: max(63vh, 105vh);
     height: 103vh;
   }
+
 
   .slider-container {
     @include container;
@@ -30,7 +30,7 @@
 
     .slider {
       @include display(flex, center, center);
-      gap: clamp(1rem, 1vw, 2rem);
+      gap: clamp(1rem, 2vw, 4rem);
 
       &:nth-child(1) {
         div {
@@ -71,7 +71,7 @@
         }
       }
       video {
-        width: 25vw;
+        width: 22vw;
       }
     }
 
@@ -79,7 +79,7 @@
       transform: translate3d(14%, 0, 0);
 
       @include mq(mq6) {
-        transform: translate3d(-13%, 0, 0);
+        transform: translate3d(-5%, 0, 0);
       }
     }
 
@@ -87,7 +87,7 @@
       transform: translate3d(-13%, 0, 0);
 
       @include mq(mq6) {
-        transform: translate3d(18%, 0, 0);
+        transform: translate3d(10%, 0, 0);
       }
     }
   }

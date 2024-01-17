@@ -24,29 +24,31 @@
     }
 
     .hero-text {
-      @include display(grid, flex-end);
+      @include display(flex, flex-end, space-between);
       @include container;
       position: absolute;
-      grid-template-columns: 5fr 1fr;
       bottom: 16%;
       left: 0;
       right: 0;
-      color: $clr-white;
+      color: var(--color-white);
+      margin-inline: 0;
+      
 
       @include mq(mq5y) {
         margin: 0 auto;
       }
 
+
       h1 {
-        font-size: clamp(
-          size("gaint-size") - 0.9rem,
-          7vw,
-          size("gaint-size") + 2rem
-        );
+        font-size: clamp(1.2875rem, 7vw, 4.788rem);
         margin-top: clamp(1.5rem, 4vw, 5rem);
 
         & > * {
           pointer-events: none;
+        }
+
+        p {
+          line-height: 1.4;
         }
       }
 

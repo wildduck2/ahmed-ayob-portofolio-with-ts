@@ -3,6 +3,7 @@
 
 .btn-text {
   color: var(--color-white);
+  font-size: clamp(0.8rem, 0.7445544554455447rem + 0.3168316831683168vw, 1rem);
 
   a {
     color: var(--color-white);
@@ -19,8 +20,7 @@
 .btn-solid-horizon {
   @include magnaticButton;
   @include border;
-  padding-inline: clamp(2.5rem, 8vw, 4rem);
+  padding-inline: clamp(0.5rem, 8vw, 4rem);
   padding-block: clamp(0.5rem, 5vw, 1.8rem);
   border-radius: 6.25rem;
-  
 }

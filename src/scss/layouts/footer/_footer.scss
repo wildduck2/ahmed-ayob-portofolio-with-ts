@@ -3,8 +3,11 @@
 
 .footer-seciton {
   position: relative;
-  background-color: $clr-black;
+  background-color: var(--color-dark);
   overflow: hidden;
+  // min-height: 100vh;
+
+
 
   .footer-naviation {
     @include section;

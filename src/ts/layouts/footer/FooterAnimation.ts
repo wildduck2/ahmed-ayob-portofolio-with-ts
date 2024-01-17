@@ -22,6 +22,8 @@ export const FooterAnimation = () => {
         });
     });
 
+    // if (innerWidth > 540) return
+
     gsap.context(() => {
         // the rounded shape animation trigger
         let tl = gsap.timeline({

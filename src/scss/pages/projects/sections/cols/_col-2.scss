@@ -23,19 +23,17 @@
     & div {
       @include display(flex, center);
       gap: clamp(0.5rem, 2.5vw, 1.5rem);
-      
+
       .filter-button {
         @include display(grid, center);
-        color: var(--color-dark);
         background-color: var(--color-light);
         font-size: clamp(size("small-size"), 2.5vw, size("big-size"));
         padding-inline: clamp(0.9rem, 3vw, 3rem);
         padding-block: 1.78rem;
-      
 
         .btn-text-m {
+          color: var(--color-dark);
           position: relative;
-
 
           .count {
             @include count;
@@ -45,6 +43,10 @@
         &.active {
           background-color: var(--color-dark);
           color: var(--color-white);
+
+          .btn-text-m {
+            color: var(--color-white);
+          }
 
           .btn-fill {
             display: none;
@@ -117,6 +119,16 @@
 
       .float-project-container {
         .project {
+
+          scale: 0;
+          height: 0;
+          transition: var(--animation-fast);
+
+          &.show{
+            scale: 1;
+            height: 138.86px;
+          }
+
           .stripe {
             display: block;
             width: 123%;
@@ -242,12 +254,11 @@
 
     @include display(flex, center, center);
 
-    &>a.magnetic{
+    & > a.magnetic {
       @include display(flex, center);
       box-shadow: none;
       background-color: var(--color-dark);
-      
-      
+
       .btn-text-m {
         color: var(--color-white);
         position: relative;
@@ -256,7 +267,6 @@
           @include count;
         }
       }
-      
     }
   }
 }
@@ -327,8 +337,7 @@
   transform: translate(-50%, -60%);
   overflow: hidden;
   display: block;
-  transition:
-    width 0.4s cubic-bezier(0.36, 0, 0.66, 0),
+  transition: width 0.4s cubic-bezier(0.36, 0, 0.66, 0),
     height 0.4s cubic-bezier(0.36, 0, 0.66, 0);
   left: 50.5%;
   top: -10%;
@@ -377,8 +386,7 @@
 .mouse-pos-list-span.active {
   width: clamp(3.75em, 5.5vw, 5em);
   height: clamp(3.75em, 5.5vw, 5em);
-  transition:
-    width 0.4s cubic-bezier(0.34, 1, 0.64, 1),
+  transition: width 0.4s cubic-bezier(0.34, 1, 0.64, 1),
     height 0.4s cubic-bezier(0.34, 1, 0.64, 1);
 }
 
@@ -386,8 +394,7 @@
 .mouse-pos-list-span.active-big {
   width: calc(clamp(3.75em, 5.5vw, 5em) * 1.66);
   height: calc(clamp(3.75em, 5.5vw, 5em) * 1.66);
-  transition:
-    width 0.4s cubic-bezier(0.34, 1, 0.64, 1),
+  transition: width 0.4s cubic-bezier(0.34, 1, 0.64, 1),
     height 0.4s cubic-bezier(0.34, 1, 0.64, 1);
 }
 
@@ -413,8 +420,7 @@
 .mouse-pos-list-span.active-big {
   border-radius: 0;
   width: clamp(10em, 27.5vw, 25em);
-  transition:
-    width 0.4s cubic-bezier(0.34, 1, 0.64, 1),
+  transition: width 0.4s cubic-bezier(0.34, 1, 0.64, 1),
     height 0.4s cubic-bezier(0.34, 1, 0.64, 1);
 }
 

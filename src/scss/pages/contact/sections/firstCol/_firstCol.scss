@@ -1,18 +1,11 @@
-@use '../../../../../scss/utils' as *;
-@use '../../../../../scss/base' as *;
+@use "../../../../../scss/utils" as *;
+@use "../../../../../scss/base" as *;
 
 .first-col-contact {
-    margin-bottom: 0;
+  margin-bottom: 0;
 
-    .main-title {
-        font-size: clamp(
-            size('titles-size'),
-            8vw,
-            calc(size('gaint-size') + 0.5rem)
-        );
-        font-weight: weight('w-500');
-        line-height: 1.5;
-        margin-block: clamp(3rem, 14vw, 8rem) clamp(3rem, 14vw, 6rem);
-        color: $clr-white;
-    }
+  .main-title {
+    @include sectionTitle;
+    color: var(--color-white);
+  }
 }

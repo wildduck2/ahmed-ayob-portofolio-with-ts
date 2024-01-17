@@ -2,17 +2,20 @@
 @use "../../base" as *;
 
 header {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
   margin-bottom: -4rem;
   z-index: 2;
 
+
   .header-container {
     @include container;
     @include display(flex, center, space-between);
-    height: 6rem;
+    height: clamp(5rem, 4.8rem + 1vw, 6rem);
+
+
   }
 }
 

@@ -17,7 +17,7 @@
 
 @mixin magnaticButton {
   font-size: 1rem;
-  font-weight: weight("w-400");
+  font-weight: weight("w-450");
   will-change: transform;
   transform: translateZ(0) rotate(0.001deg);
   text-align: center;
@@ -27,8 +27,8 @@
   transform-style: preserve-3d;
   cursor: pointer;
   overflow: hidden;
-  background: c.$clr-black;
-  color: c.$clr-white;
+  background: var(--color-dark);
+  color: var(--color-white);
 
   & > * {
     pointer-events: none;
@@ -54,6 +54,15 @@
   }
 }
 
+@mixin sectionTitle {
+  font-size: 7rem;
+  font-weight: 450;
+  text-transform: capitalize;
+  line-height: 1.065;
+  margin-block: clamp(3rem, 14vw, 6rem) clamp(3rem, 14vw, 4rem);
+  max-width: 1003px;
+}
+
 @mixin section {
   padding-block: var(--section-padding);
 }
@@ -66,9 +75,9 @@
 }
 
 @mixin container {
-  max-width: 1290px;
   padding-inline: calc(var(--container-padding) * 0.4);
   margin-inline: auto;
+  max-width: clamp(17.5rem, 0rem + 100vw, 80.625rem);
 
   @include mq(mq6) {
     padding-inline: 0;
@@ -149,7 +158,7 @@
       @content;
     }
   } @else if $query ==mq7 {
-    @media (min-width: 2500px) {
+    @media (min-width: 2300px) {
       @content;
     }
   }

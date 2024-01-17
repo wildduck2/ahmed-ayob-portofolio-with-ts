@@ -6,11 +6,15 @@
   flex-wrap: wrap;
   gap: clamp(0rem, 4vw, 2rem);
   
-  
   .footer-btn-wrapper-contact {
-    margin-block: 2rem 6rem;
-   @include display(flex);
-   
+    @include display(flex);
+    
+    margin-block: clamp(
+        1.5rem,
+        1.3613861386138613rem + 0.7920792079207921vw,
+        2rem
+      )
+      clamp(1.5rem, 0.25247524752475226rem + 7.12871287128713vw, 6rem);
     .contact-btn {
       -webkit-box-shadow: inset 0px 0px 0px 1px var(--color-border-light);
       box-shadow: inset 0px 0px 0px 1px var(--color-border-light);

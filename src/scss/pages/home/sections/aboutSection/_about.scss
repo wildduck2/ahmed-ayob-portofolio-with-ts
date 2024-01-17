@@ -4,6 +4,7 @@
 .about-section {
   @include section;
 
+
   .about-conainer {
     position: relative;
     @include container;
@@ -31,8 +32,12 @@
     }
 
     p {
-      font-size: clamp(size("paragrph-size"), 4vw, calc(size("big-size") + .15rem));
-      width: 49%;
+      font-size: clamp(
+        size("paragrph-size"),
+        4vw,
+        calc(size("big-size") + 0.15rem)
+      );
+      max-width: 68%;
 
       & > * {
         pointer-events: none;

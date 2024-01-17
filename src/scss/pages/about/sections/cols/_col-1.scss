@@ -1,12 +1,11 @@
 @use "../../../../../scss/utils" as *;
 @use "../../../../../scss/base" as *;
 
+
+
 .first-col-about {
   .main-title {
-    font-size: clamp(size("titles-size"), 4vw, size("gaint-size") + 0.6rem);
-    font-weight: weight("w-400");
-    line-height: 1.5;
-    margin-block: clamp(3rem, 14vw, 18rem) clamp(3rem, 14vw, 6rem);
+    @include sectionTitle;
   }
 
   .shape-ball-and-line {
