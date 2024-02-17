@@ -21,4 +21,4 @@ export const initScript = () => {
 
 BarbaJSRoutingAnimation();
 initScript();
-
+//fine
