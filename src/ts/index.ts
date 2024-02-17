@@ -19,6 +19,6 @@ export const initScript = () => {
   ContactPage();
 };
 
-// BarbaJSRoutingAnimation();
+BarbaJSRoutingAnimation();
 initScript();
 

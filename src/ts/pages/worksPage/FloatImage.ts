@@ -22,8 +22,11 @@ export function FloatImage() {
   const mousePosListBtnBounce = document.querySelector(
     ".mouse-pos-list-image-bounce"
   );
+  const projectList = document.querySelector(
+    ".projects-wrapper"
+  ) as HTMLUListElement;
 
-if(!floatProjectContainer&& !cursorImage) return
+  if (!floatProjectContainer && !cursorImage) return;
 
   const cursorImggeDir = {
     x: 0,
@@ -52,16 +55,25 @@ if(!floatProjectContainer&& !cursorImage) return
     cursorImggeDir.x = e.clientX;
     cursorImggeDir.y = e.clientY;
 
-    cursorImage?.animate(
-      {
-        left: `${cursorImggeDir.x}px`,
-        top: `${cursorImggeDir.y}px`,
-      },
-      {
-        duration: 900,
-        fill: "forwards",
-      }
-    );
+    if (projectList.classList.contains("menu")) {
+      cursorImage?.classList.remove("grid");
+      cursorBtn?.classList.remove("pressed");
+      cursorSpan?.classList.remove("pressed");
+      cursorImage?.animate(
+        {
+          left: `${cursorImggeDir.x}px`,
+          top: `${cursorImggeDir.y}px`,
+        },
+        {
+          duration: 900,
+          fill: "forwards",
+        }
+      );
+    } else {
+      cursorImage?.classList.add("grid");
+      cursorBtn?.classList.add("pressed");
+      cursorSpan?.classList.add("pressed");
+    }
     cursorBtn?.animate(
       {
         left: `${cursorImggeDir.x}px`,

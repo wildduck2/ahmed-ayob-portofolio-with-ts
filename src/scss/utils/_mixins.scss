@@ -35,7 +35,7 @@
   }
 }
 
-@mixin floatImage {
+@mixin floatImage($class) {
   @each $index, $color in c.$arrOfColor {
     &:nth-child(#{$index}) {
       background-color: $color;
@@ -43,7 +43,7 @@
   }
 
   @each $index, $image in c.$arrOfImages {
-    &:nth-child(#{$index}) .overlay-image {
+    &:nth-child(#{$index}) #{$class} {
       width: clamp(10em, 27.5vw, 24em);
       height: 290px;
       background-position: center center;
@@ -54,8 +54,20 @@
   }
 }
 
+@mixin count {
+  display: inline-block;
+  position: absolute;
+  margin-left: 0.25em;
+  opacity: 0.6;
+  font-size: 0.7em;
+  transform: translate(20%, -15%);
+  width: 0;
+  top: 0;
+  right: -0.2em;
+}
+
 @mixin sectionTitle {
-  font-size: 7rem;
+  font-size: clamp(2.5rem, 1.731707317073171rem + 4.390243902439024vw, 7rem);
   font-weight: 450;
   text-transform: capitalize;
   line-height: 1.065;
@@ -158,7 +170,7 @@
       @content;
     }
   } @else if $query ==mq7 {
-    @media (min-width: 2300px) {
+    @media (min-width: 2500px) {
       @content;
     }
   }

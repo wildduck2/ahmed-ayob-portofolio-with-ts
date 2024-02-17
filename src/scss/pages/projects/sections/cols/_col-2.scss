@@ -1,18 +1,6 @@
 @use "../../../../../scss/utils" as *;
 @use "../../../../../scss/base" as *;
 
-@mixin count {
-  display: inline-block;
-  position: absolute;
-  margin-left: 0.25em;
-  opacity: 0.6;
-  font-size: 0.7em;
-  transform: translate(20%, -15%);
-  width: 0;
-  top: 0;
-  right: -0.2em;
-}
-
 .second-col-works {
   .filters-wrapper {
     @include display(flex, center, space-between);
@@ -28,8 +16,12 @@
         @include display(grid, center);
         background-color: var(--color-light);
         font-size: clamp(size("small-size"), 2.5vw, size("big-size"));
-        padding-inline: clamp(0.9rem, 3vw, 3rem);
-        padding-block: 1.78rem;
+        padding-inline: clamp(1.5rem, 3vw, 3rem);
+        padding-block: clamp(
+          1.2rem,
+          1.1009756097560974rem + 0.5658536585365854vw,
+          1.78rem
+        );
 
         .btn-text-m {
           color: var(--color-dark);
@@ -66,10 +58,13 @@
 
       & .alpha {
         padding: 0.87rem;
+        display: none;
+        @include mq(mq3) {
+          display: flex;
+        }
 
         div {
           @include display(flex, center, center);
-
           padding: 0.792em;
 
           svg {
@@ -84,10 +79,14 @@
     @include display(grid, center);
 
     &.menu {
+      & picture {
+        display: none;
+      }
+
       & .propject-table-line {
         @include display(flex, center);
         margin-bottom: 2.275rem;
-        font-weight: weight("w-400");
+        font-weight: weight("w-450");
         text-transform: capitalize;
         cursor: pointer;
         text-align: center;
@@ -119,17 +118,16 @@
 
       .float-project-container {
         .project {
-
           scale: 0;
           height: 0;
           transition: var(--animation-fast);
 
-          &.show{
+          &.show {
             scale: 1;
             height: 138.86px;
           }
 
-          .stripe {
+          & > .stripe {
             display: block;
             width: 123%;
             max-width: 1500px;
@@ -178,19 +176,19 @@
             & .flex-col {
               transition: var(--animation-fast);
 
-              &:nth-child(1) {
+              &:nth-child(2) {
                 width: 40%;
               }
 
-              &:nth-child(2) {
+              &:nth-child(3) {
                 width: 20%;
               }
 
-              &:nth-child(3) {
+              &:nth-child(4) {
                 width: 22%;
               }
 
-              &:nth-child(4) {
+              &:nth-child(5) {
                 width: 14%;
                 padding-top: 0.25em;
                 text-align: right;
@@ -203,14 +201,14 @@
                 color: var(--color-gray);
               }
 
-              &:nth-child(1) {
+              &:nth-child(2) {
                 transform: translateX(calc(var(--container-padding) * -0.1))
                   rotate(0.001deg);
               }
 
-              &:nth-child(2),
               &:nth-child(3),
-              &:nth-child(4) {
+              &:nth-child(4),
+              &:nth-child(5) {
                 transform: translateX(calc(var(--container-padding) * 0.1))
                   rotate(0.001deg);
               }
@@ -230,21 +228,123 @@
 
     &.grid {
       .propject-table-line,
-      .seperator {
+      .region {
         display: none;
       }
 
-      & li {
-        font-size: clamp(size("medium-size"), 4.5vw, size("titles-size"));
-        color: $clr-black-dark;
-        color: $clr-orange;
-      }
+      & .float-project-container {
+        @include display(flex, flex-start, flex-start);
+        flex-wrap: wrap;
+        gap: 5rem 3.5rem;
+        gap: clamp(5rem, 4.146341463414634rem + 4.878048780487805vw, 10rem)
+          clamp(3.5rem, 3.4146341463414633rem + 0.4878048780487805vw, 4rem);
 
-      .projects-conatiner-animation {
-        @include display(grid, center);
-        place-self: center;
-        grid-template-columns: repeat(1, 1fr);
-        gap: clamp(2rem, 1vw, 6rem);
+        @each $index, $color in $arrOfColor {
+          & .project:nth-child(#{$index}) picture {
+            background-color: $color;
+            display: flex;
+            padding: clamp(
+                2.5rem,
+                1.731707317073171rem + 4.390243902439024vw,
+                7rem
+              )
+              clamp(1rem, 0.6585365853658536rem + 1.951219512195122vw, 3rem);
+            height: fit-content;
+            margin-bottom: 2rem;
+            font-size: clamp(
+              0.5rem,
+              0.24390243902439024rem + 1.4634146341463414vw,
+              2rem
+            );
+
+            & img {
+              display: flex;
+              transition: var(--animation-fast);
+            }
+
+            &:hover {
+              img {
+                transform: scale(1.02) !important;
+              }
+            }
+          }
+        }
+
+        & .project {
+          position: relative;
+          transform: scaleY(0);
+          width: 0;
+          height: 749.6px;
+          opacity: 0;
+          transition: var(--animation-fast);
+          transform-origin: center;
+          margin: clamp(
+              -5rem,
+              4.146341463414634rem + 4.878048780487805vw,
+              -10rem
+            )
+            clamp(-3.5rem, 3.4146341463414633rem + 0.4878048780487805vw, -4rem);
+
+          &.show {
+            margin: 0;
+            opacity: 1;
+
+            transform: scaleY(1);
+            width: 613px;
+            height: 749.6px;
+          }
+
+          & .row {
+            position: relative;
+
+            & * {
+              color: var(--color-dark);
+            }
+
+            & .name {
+              margin-bottom: 1.5rem;
+              font-size: clamp(
+                size("medium-size") + 0.2rem,
+                4.5vw,
+                size("big-size") - 0.2rem
+              );
+              font-weight: weight("w-450");
+              color: var(--color-dark);
+              transform: translateX(0) rotate(0.001deg);
+              transition: var(--animation-fast);
+            }
+
+            & .year {
+              position: absolute;
+              right: 0;
+              bottom: 0;
+            }
+
+            & .stripe {
+              display: block;
+              width: 100%;
+              max-width: 1500px;
+              height: 1px;
+              position: absolute;
+              bottom: 2.5rem;
+              left: 50%;
+              transform: translateX(-50%);
+              margin-inline: auto;
+              background-color: rgba(28, 29, 32, 0.175);
+            }
+          }
+
+          font-size: clamp(size("medium-size"), 4.5vw, size("titles-size"));
+          color: $clr-black-dark;
+          color: $clr-orange;
+        }
+
+        .projects-conatiner-animation {
+          @include display(grid, center);
+          place-self: center;
+          grid-template-columns: repeat(1, 1fr);
+          gap: clamp(2rem, 1vw, 6rem);
+        }
       }
     }
   }
@@ -311,7 +411,7 @@
   }
 
   .float-image-item {
-    @include floatImage;
+    @include floatImage(".overlay-image");
     @include display(grid);
     place-content: center;
     width: 100%;
@@ -321,6 +421,10 @@
       margin-inline: auto;
       padding-block: 50%;
     }
+  }
+
+  &.grid {
+    display: none;
   }
 }
 

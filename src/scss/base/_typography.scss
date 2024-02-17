@@ -32,7 +32,7 @@ $weights: (
     font-weight: 400;
     src:
         local("Ahmed"),
-        url("/public/fonts/PPNeueMontreal-Book.otf") format("opentype");
+        url("/fonts/PPNeueMontreal-Book.otf") format("opentype");
 }
 
 @font-face {
@@ -41,7 +41,7 @@ $weights: (
     font-weight: 200;
     src:
         local("Ahmed"),
-        url("/public/fonts/PPNeueMontreal-Thin.otf") format("opentype");
+        url("/fonts/PPNeueMontreal-Thin.otf") format("opentype");
 }
 
 @font-face {
@@ -51,7 +51,7 @@ $weights: (
     /* Adjusted value */
     src:
         local("Ahmed"),
-        url("/public/fonts/PPNeueMontreal-Medium.otf") format("opentype");
+        url("/fonts/PPNeueMontreal-Medium.otf") format("opentype");
 }
 
 @font-face {
@@ -61,7 +61,7 @@ $weights: (
     /* Adjusted value */
     src:
         local("Ahmed"),
-        url("/public/fonts/PPNeueMontreal-Bold.otf") format("opentype");
+        url("/fonts/PPNeueMontreal-Bold.otf") format("opentype");
 }
 
 @font-face {
@@ -71,7 +71,7 @@ $weights: (
     /* Adjusted value */
     src:
         local("Ahmed"),
-        url("/public/fonts/ppneuemontreal-Regular.otf") format("opentype");
+        url("/fonts/ppneuemontreal-Regular.otf") format("opentype");
 }
 
 h1,
