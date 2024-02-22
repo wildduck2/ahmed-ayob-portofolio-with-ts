@@ -1,77 +1,69 @@
-@use "../utils/mixins" as *;
+@use '../utils/mixins' as *;
 
-$Roboto: "Ahmed Sans", sans-serif;
-$Poppins: "Poppins", sans-serif;
-$Inter: "Ahmed";
+$Roboto: 'Ahmed Sans', sans-serif;
+$Poppins: 'Poppins', sans-serif;
+$Inter: 'Ahmed';
 
 /*========== Font and typography ==========*/
 $sizes: (
-    "gaint-size": 2.1875rem,
-    "big-size": 1.325rem,
-    "titles-size": 1.125rem,
-    "medium-size": 0.9375rem,
-    "paragrph-size": 0.8125rem,
-    "small-size": 0.75rem,
+  'gaint-size': 2.1875rem,
+  'big-size': 1.325rem,
+  'titles-size': 1.125rem,
+  'medium-size': 0.9375rem,
+  'paragrph-size': 0.8125rem,
+  'small-size': 0.75rem,
 );
 
 /*========== Font weight ==========*/
 $weights: (
-    "w-200": 200,
-    "w-400": 400,
-    "w-450": 450,
-    "w-530": 530,
-    "w-600": 600,
-    "w-700": 700,
-    "w-800": 800,
-    "w-900": 900,
+  'w-200': 200,
+  'w-400': 400,
+  'w-450': 450,
+  'w-530': 530,
+  'w-600': 600,
+  'w-700': 700,
+  'w-800': 800,
+  'w-900': 900,
 );
 
 @font-face {
-    font-family: "Ahmed";
-    font-style: normal;
-    font-weight: 400;
-    src:
-        local("Ahmed"),
-        url("/fonts/PPNeueMontreal-Book.otf") format("opentype");
+  font-family: 'Ahmed';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Ahmed'), url('/fonts/PPNeueMontreal-Book.otf') format('opentype');
 }
 
 @font-face {
-    font-family: "Ahmed";
-    font-style: normal;
-    font-weight: 200;
-    src:
-        local("Ahmed"),
-        url("/fonts/PPNeueMontreal-Thin.otf") format("opentype");
+  font-family: 'Ahmed';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Ahmed'), url('/fonts/PPNeueMontreal-Thin.otf') format('opentype');
 }
 
 @font-face {
-    font-family: "Ahmed";
-    font-style: normal;
-    font-weight: 530;
-    /* Adjusted value */
-    src:
-        local("Ahmed"),
-        url("/fonts/PPNeueMontreal-Medium.otf") format("opentype");
+  font-family: 'Ahmed';
+  font-style: normal;
+  font-weight: 530;
+  /* Adjusted value */
+  src: local('Ahmed'),
+    url('/fonts/PPNeueMontreal-Medium.otf') format('opentype');
 }
 
 @font-face {
-    font-family: "Ahmed";
-    font-style: normal;
-    font-weight: 800;
-    /* Adjusted value */
-    src:
-        local("Ahmed"),
-        url("/fonts/PPNeueMontreal-Bold.otf") format("opentype");
+  font-family: 'Ahmed';
+  font-style: normal;
+  font-weight: 800;
+  /* Adjusted value */
+  src: local('Ahmed'), url('/fonts/PPNeueMontreal-Bold.otf') format('opentype');
 }
 
 @font-face {
-    font-family: "Ahmed";
-    font-style: normal;
-    font-weight: 450;
-    /* Adjusted value */
-    src:
-        local("Ahmed"),
-        url("/fonts/ppneuemontreal-Regular.otf") format("opentype");
+  font-family: 'Ahmed';
+  font-style: normal;
+  font-weight: 450;
+  /* Adjusted value */
+  src: local('Ahmed'),
+    url('/fonts/ppneuemontreal-Regular.otf') format('opentype');
 }
 
 h1,
@@ -88,48 +80,48 @@ ol,
 span,
 strong,
 em {
-    font-style: normal;
-    font-weight: 450;
-    letter-spacing: normal;
+  font-style: normal;
+  font-weight: 450;
+  letter-spacing: normal;
 }
 
 h1 {
-    font-size: clamp(3.25em, 7vw, 8em);
-    line-height: 1.065;
-    // margin-bottom: 1em;
-    font-size: calc(clamp(3.25em, 7vw, 8em) * 0.875);
+  font-size: clamp(3.25em, 7vw, 8em);
+  line-height: 1.065;
+  // margin-bottom: 1em;
+  font-size: calc(clamp(3.25em, 7vw, 8em) * 0.875);
 }
 
 h2 {
-    font-size: calc(clamp(3.25em, 5vw, 4.5em) * 0.75);
-    line-height: 1.065;
-    // margin-bottom: 0.66em;
+  font-size: calc(clamp(3.25em, 5vw, 4.5em) * 0.75);
+  line-height: 1.065;
+  // margin-bottom: 0.66em;
 }
 
 h3 {
-    font-size: clamp(2.66em, 4.65vw, 5.32em);
-    line-height: 1.065;
-    // margin-bottom: 1em;
+  font-size: clamp(2.66em, 4.65vw, 5.32em);
+  line-height: 1.065;
+  // margin-bottom: 1em;
 }
 
 h4 {
-    font-size: clamp(1.55em, 2.3vw, 2.5em);
-    line-height: 1.45;
-    // margin-bottom: 1em;
+  font-size: clamp(1.55em, 2.3vw, 2.5em);
+  line-height: 1.45;
+  // margin-bottom: 1em;
 }
 
 h5 {
-    font-size: 0.6em;
-    line-height: 1.065;
-    // margin-bottom: 1em;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    opacity: 0.5;
+  font-size: 0.6em;
+  line-height: 1.065;
+  // margin-bottom: 1em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.5;
 }
 
 p {
-    color: var(--text);
-    font-size: 1em;
-    line-height: 1.66;
-    // margin-bottom: 1em;
+  color: var(--text);
+  font-size: 1em;
+  line-height: 1.66;
+  // margin-bottom: 1em;
 }
