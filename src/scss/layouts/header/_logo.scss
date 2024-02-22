@@ -1,5 +1,5 @@
-@use "../../utils" as *;
-@use "../../base" as *;
+@use '../../utils' as *;
+@use '../../base' as *;
 
 .logo {
   & > div {
@@ -10,11 +10,7 @@
     .logo-text-wrapper {
       overflow: hidden;
       transition: 0.7s ease-in-out;
-      width: clamp(
-        6.5rem,
-        5.014705882352941rem + 5.821078431372549vw,
-        11.8rem
-      );
+      width: clamp(6.5rem, 5.014705882352941rem + 6.821078431372549vw, 12.8rem);
 
       .logo-text {
         width: fit-content;
